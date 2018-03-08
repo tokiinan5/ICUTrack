@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "437025559987",
+    "firebase_url": "https://icu-track.firebaseio.com",
+    "project_id": "icu-track",
+    "storage_bucket": "icu-track.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437025559987:android:78f095f20ea8d274",
+        "android_client_info": {
+          "package_name": "com.example.dell.icutrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437025559987-64j87au61ci722q7i61jqqn2sj6sc29s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dell.icutrack",
+            "certificate_hash": "d5b576c3bc5d9427253190ec360e57bd0c8e1814"
+          }
+        },
+        {
+          "client_id": "437025559987-mokvudfcrun1vh63ttipuiun2s3uhj32.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMsgzP5mLQzQx4IxWbscj0tNDddyYubdQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "437025559987-mokvudfcrun1vh63ttipuiun2s3uhj32.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

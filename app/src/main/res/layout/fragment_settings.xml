@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.dell.icutrack.Settingspager">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RadioButton
+        android:id="@+id/rBangla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:text="@string/language_Bangla"
+        android:onClick="onLanguage"
+        />
+    <RadioButton
+        android:layout_gravity="center"
+        android:id="@+id/rEnglish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:onClick="onLanguage"
+        android:text="@string/language_English"
+        />
+
+</LinearLayout>

@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">ICU Track</string>
+    <string name="title_activity_working">বিভিন্ন স্কোরিং </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="text_Age">বয়স</string>
+    <string name="text_">Age</string>
+    <string name="text_Heart">হারট বিট</string>
+    <string name="text_Bp">গড় রক্তচাপ</string>
+    <string name="text_Temperature">তাপমাত্রা</string>
+    <string name="text_Bilirubin">বিলিরুবিন</string>
+    <string name="text_Potassium">পটাসিয়াম</string>
+    <string name="text_WBC">শ্বেত রক্তকণিকা </string>
+    <string name="text_Pa">সোডিয়াম</string>
+    <string name="button_Calculate">হিসেব</string>
+    <string name="button_Reset">পুনরায়</string>
+    <string name="button_Save">জমা করুন</string>
+    <string name="settings">সেটিংস</string>
+    <string name="compare">তুলনা করুন</string>
+    <string name="history">ইতিহাস</string>
+    <string name="tab_readmission">পুনভর্তি </string>
+    <string name="tab_Apache">তীব্রতা</string>
+    <string name="tab_SAPS">মৃত্যুসম্ভাবনা</string>
+
+    <string name="msg_Sign_IN">প্রবেশ সম্পন্ন হয়েছে</string>
+    <string name="msg_Sign_Up">প্রবেশ সম্পন্ন হয়েছে</string>
+    <string name="msg_Email">আপনার ইমেইল নিশিত করুন</string>
+    <string name="msg_Confirm">অকে</string>
+    <string name="excp_Mail">এই ইমেইল এর কোন ব্যবহারকারী নেই</string>
+    <string name="excp_Password">পাসওার্ড অথবা ব্যবহারকারীর নাম ভুল</string>
+
+
+
+    <string name="text_BUN">রক্তে ইয়রিয়ার পরিমাণ</string>
+    <string name="text_BiCO2">কার্বন ডাই অক্সাইড</string>
+    <string name="text_Albumin">এলবুমিন</string>
+    <string name="text_Glucose">গ্লুকোজ</string>
+    <string name="text_Platelet">লোহিত কণিকা</string>
+    <string name="text_Globuline">গ্লোবিউলিন</string>
+    <string name="text_PH">পি.এইচ</string>
+    <string name="text_Na">সোডিয়াম</string>
+    <string name="text_Creatininr">ক্রিয়েটিনিন</string>
+    <string name="text_Hematocrit">হেমাটোক্রিট</string>
+    <string name="text_Admission">ভর্তি </string>
+    <string name="text_Gender">লিংগ</string>
+    <string name="gender_male">পুরুষ</string>
+    <string name="gender_female">মহিলা</string>
+    <string name="text_LOS">অবস্থান এর দৈর্ঘ্য</string>
+    <string name="text_PaO2">অক্সিজেন এর আংশিক চাপ</string>
+
+    <string-array name="Admission_Array">
+        <item>ইমারজেন্সি</item>
+        <item>ঐচ্ছিক</item>
+        <item>গুরুত্বপুর্ণ</item>
+
+    </string-array>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
