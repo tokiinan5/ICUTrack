@@ -51,9 +51,14 @@
     <string name="text_PaO2">PaO2</string>
 
     <string-array name="Admission_Array">
+        <item>Select Here</item>
         <item>Emergency</item>
         <item>Elective</item>
         <item>Urgent</item>
+
+    </string-array>
+    <string-array name="apache_temp">
+        <item></item>
 
     </string-array>
 

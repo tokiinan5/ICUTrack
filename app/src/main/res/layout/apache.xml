@@ -13,222 +13,27 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-
         android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tName"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_above="@+id/tHeart"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:paddingTop="8dp"
-            android:text="@string/text_Age"
-            android:textColor="#fffdfd"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/eAge"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/buttonshape"
-            android:hint="Age" />
-
-        <TextView
-            android:id="@+id/tHeart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/eHeart"
-            android:layout_alignEnd="@+id/tPotassium"
-            android:layout_alignRight="@+id/tPotassium"
-            android:text="@string/text_Heart"
-            android:textColor="#fffdfd"
-            android:textSize="20dp" />
-
-
-        <EditText
-            android:id="@+id/eHeart"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/eAge"
-            android:layout_marginTop="7dp"
-            android:background="@drawable/buttonshape"
-            android:hint="Heart Rate" />
-
-        <TextView
-            android:id="@+id/tBp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/eHeart"
-            android:layout_marginTop="6dp"
-            android:text="@string/text_Bp"
-            android:textColor="#fffdfd"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/eBp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/eHeart"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/buttonshape"
-            android:hint="Systolic Bp" />
-
 
         <TextView
             android:id="@+id/tTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/eTemp"
-            android:layout_alignBottom="@+id/eTemp"
+
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingTop="8dp"
             android:text="@string/text_Temperature"
             android:textColor="#fffdfd"
             android:textSize="20dp" />
-
-        <EditText
-
-            android:id="@+id/eTemp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/eBp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/buttonshape"
-            android:hint="Temperature" />
-
-
-        <TextView
-            android:id="@+id/tBillirubin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/eTemp"
-            android:layout_marginTop="13dp"
-            android:text="@string/text_Bilirubin"
-            android:textColor="#fffdfd"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/eBilirubin"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/tBillirubin"
-            android:background="@drawable/buttonshape"
-            android:hint="Bilirubin" />
-
-        <TextView
-            android:id="@+id/tPotassium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/ePotassium"
-            android:text="@string/text_Potassium"
-            android:textColor="#fffdfd"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/ePotassium"
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/sTemperature"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/eBilirubin"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/buttonshape"
-            android:hint="Potassium"
-            android:paddingLeft="8dp"
+            android:layout_alignParentTop="true">
 
-            />
-
-        <TextView
-            android:id="@+id/tWbc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/ePa"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:text="@string/text_WBC"
-            android:textColor="#fffdfd"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/eWBC"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/ePotassium"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/buttonshape"
-            android:hint="White Blood Cell" />
-
-        <TextView
-            android:id="@+id/tPa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/ePa"
-
-            android:layout_alignBottom="@+id/ePa"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:text="@string/text_Pa"
-            android:textColor="#fffdfd"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/ePa"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/eWBC"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/buttonshape"
-            android:hint="PaO2" />
-
-        <Button
-            android:id="@+id/bCalculate"
-            android:layout_width="120sp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/ePa"
-            android:layout_marginTop="40dp"
-
-            android:background="@drawable/custombutton"
-            android:elevation="10dp"
-            android:text="@string/button_Calculate" />
-
-        <Button
-            android:id="@+id/bReset"
-            android:layout_width="120sp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/custombutton"
-            android:text="@string/button_Reset" />
-
-        <Button
-
-            android:id="@+id/bSave"
-            android:layout_width="120sp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/ePa"
-            android:layout_marginLeft="5dp"
-
-            android:layout_marginTop="40dp"
-            android:background="@drawable/custombutton"
-            android:text="@string/button_Save" />
-
+        </android.support.v7.widget.AppCompatSpinner>
 
     </RelativeLayout>
 
