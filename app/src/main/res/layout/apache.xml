@@ -16,7 +16,323 @@
 
         android:orientation="vertical">
 
-      
+        <TextView
+            android:id="@+id/tTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:paddingTop="8dp"
+            android:text="@string/text_Temperature"
+            android:textColor="#fffdfd"
+            android:textSize="17sp" />
+
+        <Spinner
+            android:layout_marginTop="8sp"
+            android:id="@+id/sTemp"
+            android:background="@drawable/buttonshape"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+       >
+
+        </Spinner>
+
+        <TextView
+            android:id="@+id/tBp"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tTemp"
+            android:layout_marginTop="8sp"
+            android:text="@string/text_Bp"
+            android:textColor="#fffdfd"
+            android:textSize="17sp"/>
+
+        <Spinner
+            android:id="@+id/sBp"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tTemp"
+            android:layout_marginTop="8dp">
+
+
+        </Spinner>
+        <TextView
+            android:textColor="#fffdfd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:textSize="17sp"
+        android:id="@+id/tHeart"
+        android:layout_below="@+id/tBp"
+        android:text="@string/text_Heart"
+        android:layout_marginTop="8sp"/>
+        <TextView
+            android:textColor="#fffdfd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/tRespiratory"
+            android:layout_below="@+id/tHeart"
+            android:text="@string/text_Respiratory"
+            android:layout_marginTop="8sp"/>
+        <TextView
+            android:textColor="#fffdfd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/tPaO2"
+            android:layout_below="@+id/tRespiratory"
+            android:text="@string/text_PaO2"
+            android:layout_marginTop="8sp"/>
+        <TextView
+        android:textColor="#fffdfd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:textSize="17sp"
+        android:id="@+id/tPH"
+        android:layout_below="@+id/tPaO2"
+        android:text="@string/text_PH"
+        android:layout_marginTop="8sp"/>
+        <TextView
+            android:textColor="#fffdfd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/tNa"
+            android:layout_below="@+id/tPH"
+            android:text="@string/text_Pa"
+            android:layout_marginTop="8sp"/>
+
+        <TextView
+            android:id="@+id/tPotassium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/tHeart"
+            android:layout_alignRight="@+id/tHeart"
+            android:layout_below="@+id/tNa"
+            android:layout_marginTop="8sp"
+            android:text="@string/text_Potassium"
+            android:textColor="#fffdfd"
+            android:textSize="17sp" />
+        <TextView
+            android:textColor="#fffdfd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/tCreatinine"
+            android:layout_below="@+id/tPotassium"
+            android:text="@string/text_Creatininr"
+            android:layout_marginTop="8sp"/>
+
+        <TextView
+            android:textColor="#fffdfd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/tHematocrit"
+            android:layout_below="@+id/tCreatinine"
+            android:text="@string/text_Hematocrit"
+            android:layout_marginTop="8sp"/>
+
+
+        <TextView
+            android:textColor="#fffdfd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/tWbc"
+            android:layout_below="@+id/tHematocrit"
+            android:text="@string/text_WBC"
+            android:layout_marginTop="8sp"/>
+
+
+        <TextView
+        android:textColor="#fffdfd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:textSize="17sp"
+        android:id="@+id/tComa"
+        android:layout_below="@+id/tWbc"
+        android:text="@string/text_Glasgow"
+        android:layout_marginTop="8sp"/>
+        <TextView
+            android:textColor="#fffdfd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/tAge"
+            android:layout_below="@+id/tComa"
+            android:text="@string/text_Age"
+            android:layout_marginTop="8sp"/>
+
+
+
+        <TextView
+            android:textColor="#fffdfd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/tCronic"
+            android:layout_below="@+id/tAge"
+            android:text="@string/text_chronic"
+            android:layout_marginTop="8sp"/>
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sHeart"
+            android:layout_below="@id/tBp"
+            android:layout_alignParentRight="true">
+
+        </Spinner>
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sResp"
+            android:layout_below="@id/tHeart"
+            android:layout_alignParentRight="true">
+        </Spinner>
+
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sPaO2"
+            android:layout_below="@id/tRespiratory"
+            android:layout_alignParentRight="true">
+
+        </Spinner>
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sPH"
+            android:layout_below="@id/tPaO2"
+            android:layout_alignParentRight="true">
+
+        </Spinner>
+
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sSodium"
+            android:layout_below="@id/tPH"
+            android:layout_alignParentRight="true">
+
+        </Spinner>
+
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sPotassium"
+            android:layout_below="@id/tNa"
+            android:layout_alignParentRight="true">
+
+        </Spinner>
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sCreatinine"
+            android:layout_below="@id/tPotassium"
+            android:layout_alignParentRight="true">
+
+        </Spinner>
+
+
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sHematocrit"
+            android:layout_below="@id/tCreatinine"
+            android:layout_alignParentRight="true">
+
+        </Spinner>
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sWBC"
+            android:layout_below="@id/tHematocrit"
+            android:layout_alignParentRight="true">
+
+
+        </Spinner>
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sComa"
+            android:layout_below="@id/tWbc"
+            android:layout_alignParentRight="true">
+
+        </Spinner>
+
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sAge"
+            android:layout_below="@id/tComa"
+            android:layout_alignParentRight="true">
+
+        </Spinner>
+
+        <Spinner
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/sChronic"
+            android:layout_below="@id/tAge"
+            android:layout_alignParentRight="true">
+
+        </Spinner>
+        <Button
+            android:id="@+id/bReset"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/custombutton"
+            android:text="@string/button_Reset" />
+
+        <Button
+
+            android:id="@+id/bSave"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/rfeMale"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentBottom="true"
+
+            android:background="@drawable/custombutton"
+            android:text="@string/button_Save" />
+
+        <Button
+            android:id="@+id/bCalculate"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/rfeMale"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentBottom="true"
+
+            android:background="@drawable/custombutton"
+            android:elevation="10dp"
+            android:text="@string/button_Calculate" />
+
+
+
+
+
+
 
     </RelativeLayout>
 
