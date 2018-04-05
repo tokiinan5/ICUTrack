@@ -49,7 +49,9 @@
     <string name="gender_male">পুরুষ</string>
     <string name="gender_female">মহিলা</string>
     <string name="text_LOS">অবস্থান এর দৈর্ঘ্য</string>
-    <string name="text_PaO2">অক্সিজেন এর আংশিক চাপ</string>
+    <string name="text_PaO2">অক্সিজেন এর চাপ</string>
+    <string name="text_Respiratory">Respiratory Rate</string>
+    <string name="text_Glasgow">Glasgow Coma Score</string>
 
     <string-array name="Admission_Array">
         <item>ইমারজেন্সি</item>

@@ -75,7 +75,7 @@ public class IRPS extends Fragment {
         bReset=myView.findViewById(R.id.bReset);
         bCalculate=myView.findViewById(R.id.bCalculate);
         sAdmission=myView.findViewById(R.id.sAdmmission);
-         ArrayAdapter myAdapter=ArrayAdapter.createFromResource(getContext(),R.array.Admission_Array,android.R.layout.simple_spinner_item);
+         ArrayAdapter myAdapter=ArrayAdapter.createFromResource(getActivity(),R.array.Admission_Array,android.R.layout.simple_spinner_item);
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sAdmission.setAdapter(myAdapter);
         sAdmission.setPrompt("Click Here");
