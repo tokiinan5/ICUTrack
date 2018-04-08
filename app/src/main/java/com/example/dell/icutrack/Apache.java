@@ -28,8 +28,11 @@ public class Apache extends Fragment {
     Spinner sTemp,sBp,sHeart,sRespiratory,sPaO2,sPh,sSodium,sPotassium,sCreatinine,sAage,
     sHematocrit,sWBc,sComa,sCritical;
     int mTemp,mBp,mHeart,mRespiratory,mPaO2,mPh,mSodium,mPotassium,mCreatinine,mAge,
-            mHematocrit,mWBc,mComa,mCritical;
+            mHematocrit,mWBc,mComa,mCritical,summation;
+
+
     View view;
+
     ArrayAdapter adapterTemp,adapterBp,adapterHeart,adapterRespiratory,adapterPaO2,adapterPh,adapterSodium,adapterPotassium
             ,adapterCreatinine,adapterAge,
             adapterHematocrit,adapterWBc,adapterComa,adapterCritical;
@@ -45,6 +48,7 @@ public class Apache extends Fragment {
                              Bundle savedInstanceState) {
         view=inflater.inflate(apache,container,false);
         init();
+        summation=0;
         return view;
     }
 
@@ -98,6 +102,35 @@ public class Apache extends Fragment {
      };
      adapterTemp.setDropDownViewResource(android.R.layout.simple_spinner_item);
      sTemp.setAdapter(adapterTemp);
+     sTemp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+         @Override
+         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+             switch (i){
+                 case 0: mTemp=4;
+                      break;
+                 case  1: mTemp=3;
+                 break;
+                 case  2: mTemp=1;
+                 break;
+                 case 3: mTemp=0;
+                 break;
+                 case 4: mTemp=1;
+                 break;
+                 case 5: mTemp=2;
+                 break;
+                 case 6: mTemp=3;
+                 break;
+                 default:mTemp=0;
+             }
+             summation=summation+mTemp;
+
+         }
+
+         @Override
+         public void onNothingSelected(AdapterView<?> adapterView) {
+
+         }
+     });
 
      //Spinner for BP
 
@@ -134,6 +167,21 @@ public class Apache extends Fragment {
         };
         adapterBp.setDropDownViewResource(android.R.layout.simple_spinner_item);
         sBp.setAdapter(adapterTemp);
+        sBp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0:mBp=4;
+                    case 1:
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         //Spinner For Heart Rate
 

@@ -29,6 +29,7 @@ int array Respiratory_Array 0x7f03000a
 int array Sodium_Array 0x7f03000b
 int array Temperature_Array 0x7f03000c
 int array Wbc_Array 0x7f03000d
+int array apache_temp 0x7f03000e
 int attr actionBarDivider 0x7f040000
 int attr actionBarItemBackground 0x7f040001
 int attr actionBarPopupTheme 0x7f040002

@@ -295,7 +295,7 @@
         </Spinner>
         <Button
             android:id="@+id/bReset"
-            android:layout_width="120sp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -305,7 +305,7 @@
         <Button
 
             android:id="@+id/bSave"
-            android:layout_width="120sp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/rfeMale"
@@ -317,7 +317,7 @@
 
         <Button
             android:id="@+id/bCalculate"
-            android:layout_width="120sp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/rfeMale"

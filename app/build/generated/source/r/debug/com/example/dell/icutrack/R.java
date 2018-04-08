@@ -44,6 +44,7 @@ public final class R {
     public static final int Sodium_Array=0x7f03000b;
     public static final int Temperature_Array=0x7f03000c;
     public static final int Wbc_Array=0x7f03000d;
+    public static final int apache_temp=0x7f03000e;
   }
   public static final class attr {
     /**
