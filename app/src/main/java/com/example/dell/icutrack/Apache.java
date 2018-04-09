@@ -242,6 +242,8 @@ public class Apache extends Fragment {
                     break;
                     case 1: mHeart=3;
                     break;
+                    case 2: mHeart=2;
+                    break;
 
 
 
