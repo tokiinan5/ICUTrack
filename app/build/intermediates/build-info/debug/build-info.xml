@@ -5,31 +5,35 @@
     build-mode="COLD"
     density="xxhdpi"
     format="10"
+    ir-eligibility="FIELD_ADDED"
     plugin-version="3.0.1"
-    timestamp="1523160944148"
+    timestamp="1523252806659"
     token="-533200667133609616"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="517" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="35" />
     <task
         name="verifier"
-        duration="0" />
+        duration="19" />
 
+    <artifact
+        location="D:\Z\ICUTrack\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
     <artifact
         location="D:\Z\ICUTrack\app\build\outputs\apk\debug\app-debug.apk"
         type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1523160747497"
+        timestamp="1523251467040"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\Z\ICUTrack\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
@@ -50,9 +54,6 @@
             location="D:\Z\ICUTrack\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="D:\Z\ICUTrack\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
             location="D:\Z\ICUTrack\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
@@ -67,11 +68,18 @@
         <artifact
             location="D:\Z\ICUTrack\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
+        <artifact
+            location="D:\Z\ICUTrack\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1523160944148"
+        ir-eligibility="FIELD_ADDED"
+        timestamp="1523252806659"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\Z\ICUTrack\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
         <artifact
             location="D:\Z\ICUTrack\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />

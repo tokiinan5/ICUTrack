@@ -20,6 +20,7 @@ MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\DELL\.g
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\8019a6660e232f3a66ac3775ecbb79e7\AndroidManifest.xml:16:1-23:12
 MERGED from [com.android.support:transition:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\0e13e8ba9d8e15373b5a92d6c1fb1d8b\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\f05fbdd7c2053d0aa0daa12b080bea8f\AndroidManifest.xml:17:1-31:12
+MERGED from [com.intuit.sdp:sdp-android:1.0.5] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\sdp-android-1.0.5.aar\6bcc1ce8050e0f504c64710fb72d84ff\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\bf63b10afe93879b1c00712c3af4bf80\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\e903c5caea1a0e9138cdc78fcdcff35f\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\a176d56d5a738153a1f3bec1c4ffc7c2\AndroidManifest.xml:17:1-28:12
@@ -190,6 +191,8 @@ MERGED from [com.android.support:transition:26.1.0] C:\Users\DELL\.gradle\caches
 MERGED from [com.android.support:transition:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\0e13e8ba9d8e15373b5a92d6c1fb1d8b\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\f05fbdd7c2053d0aa0daa12b080bea8f\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\f05fbdd7c2053d0aa0daa12b080bea8f\AndroidManifest.xml:21:5-23:54
+MERGED from [com.intuit.sdp:sdp-android:1.0.5] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\sdp-android-1.0.5.aar\6bcc1ce8050e0f504c64710fb72d84ff\AndroidManifest.xml:7:5-9:41
+MERGED from [com.intuit.sdp:sdp-android:1.0.5] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\sdp-android-1.0.5.aar\6bcc1ce8050e0f504c64710fb72d84ff\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\bf63b10afe93879b1c00712c3af4bf80\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\bf63b10afe93879b1c00712c3af4bf80\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\DELL\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\e903c5caea1a0e9138cdc78fcdcff35f\AndroidManifest.xml:20:5-44

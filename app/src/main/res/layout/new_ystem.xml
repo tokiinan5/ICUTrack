@@ -29,7 +29,7 @@
             android:paddingTop="8dp"
             android:text="@string/text_BUN"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <EditText
             android:id="@+id/eBUN"
@@ -49,7 +49,7 @@
             android:paddingTop="8dp"
             android:text="@string/text_Bilirubin"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
 
         <EditText
@@ -70,7 +70,7 @@
             android:layout_marginTop="10dp"
             android:text="@string/text_BiCO2"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <EditText
             android:id="@+id/eBiCo2"
@@ -90,7 +90,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/text_Albumin"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp"/>
 
         <EditText
             android:id="@+id/eAlbumin"
@@ -110,7 +110,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/text_Glucose"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp"/>
 
         <EditText
             android:id="@+id/eGlucose"
@@ -130,7 +130,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/text_Platelet"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <EditText
             android:id="@+id/ePlatelet"
@@ -151,7 +151,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/text_LOS"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <EditText
             android:id="@+id/eLos"
@@ -171,7 +171,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/text_PaO2"
             android:textColor="#fffdfd"
-            android:textSize="20dp"
+            android:textSize="17dp"
 
             />
 
@@ -194,7 +194,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/text_PH"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <EditText
             android:id="@+id/ePH"
@@ -214,7 +214,7 @@
             android:layout_marginTop="5dp"
             android:text="@string/text_Pa"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <EditText
             android:id="@+id/eNa"
@@ -236,7 +236,7 @@
             android:layout_marginTop="3dp"
             android:text="@string/text_Potassium"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <EditText
             android:id="@+id/ePotassium"
@@ -256,7 +256,7 @@
             android:layout_marginTop="5dp"
             android:text="@string/text_Creatininr"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <EditText
             android:id="@+id/eCreatine"
@@ -277,7 +277,7 @@
             android:layout_marginTop="5dp"
             android:text="@string/text_WBC"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <EditText
             android:id="@+id/eWBC"
@@ -298,7 +298,7 @@
             android:layout_marginTop="5dp"
             android:text="@string/text_Hematocrit"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp"/>
 
         <EditText
             android:id="@+id/eHematocrit"
@@ -319,7 +319,7 @@
             android:layout_marginTop="5dp"
             android:text="@string/text_Age"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <EditText
             android:id="@+id/eAge"
@@ -340,7 +340,7 @@
             android:layout_marginTop="5dp"
             android:text="@string/text_Admission"
             android:textColor="#fffdfd"
-            android:textSize="20dp" />
+            android:textSize="17dp" />
 
         <Spinner
             android:id="@+id/sAdmmission"
@@ -357,7 +357,7 @@
 
         <Button
             android:id="@+id/bCalculate"
-            android:layout_width="120sp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/rfeMale"
@@ -381,7 +381,7 @@
 
         <RadioButton
             android:id="@+id/rMale"
-            android:layout_width="200sp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
 
@@ -392,7 +392,7 @@
 
         <RadioButton
             android:id="@+id/rfeMale"
-            android:layout_width="200sp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@id/rMale"
@@ -403,7 +403,7 @@
 
         <Button
             android:id="@+id/bReset"
-            android:layout_width="120sp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -413,7 +413,7 @@
         <Button
 
             android:id="@+id/bSave"
-            android:layout_width="120sp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/rfeMale"

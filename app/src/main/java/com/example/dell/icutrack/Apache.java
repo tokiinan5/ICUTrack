@@ -4,6 +4,7 @@ package com.example.dell.icutrack;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -134,7 +136,7 @@ public class Apache extends Fragment {
 
      //Spinner for BP
 
-        List<String> bpList = Arrays.asList(getResources().getStringArray(R.array.Bp_Array));
+        final List<String> bpList = Arrays.asList(getResources().getStringArray(R.array.Bp_Array));
         adapterBp=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,bpList){
             @Override
             public boolean isEnabled(int position){
@@ -170,12 +172,26 @@ public class Apache extends Fragment {
         sBp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+               // Toast.makeText(getContext(),bpList.get(i).toString(),Toast.LENGTH_SHORT).show();
                 switch (i){
                     case 0:mBp=4;
-                    case 1:
+                    break;
+                    case 1:mBp=3;
+                    break;
+                    case 2:mBp=2;
+                    break;
+                    case 3: mBp=0;
+                    break;
+                    case 4: mBp=2;
+                    break;
+                    case 5: mBp=4;
+                    break;
+                    default:mBp=0;
 
                 }
+                summation=summation+mBp;
             }
+
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
@@ -184,7 +200,7 @@ public class Apache extends Fragment {
         });
 
         //Spinner For Heart Rate
-
+//Log.e("Result", String.valueOf(summation));
         List<String> heartList = Arrays.asList(getResources().getStringArray(R.array.Heart_Array));
         adapterHeart=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,heartList){
             @Override
@@ -218,6 +234,30 @@ public class Apache extends Fragment {
         };
         adapterHeart.setDropDownViewResource(android.R.layout.simple_spinner_item);
         sHeart.setAdapter(adapterHeart);
+        sHeart.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0: mHeart=4;
+                    break;
+                    case 1: mHeart=3;
+                    break;
+
+
+
+
+
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
 
 
