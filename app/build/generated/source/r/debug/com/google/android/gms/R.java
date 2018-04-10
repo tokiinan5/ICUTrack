@@ -57,11 +57,11 @@ public final class R {
         public static final int auto = 0x7f0a0022;
         public static final int center = 0x7f0a002e;
         public static final int dark = 0x7f0a003c;
-        public static final int icon_only = 0x7f0a0075;
-        public static final int light = 0x7f0a007f;
-        public static final int none = 0x7f0a0092;
-        public static final int normal = 0x7f0a0093;
-        public static final int radio = 0x7f0a00a4;
+        public static final int icon_only = 0x7f0a0076;
+        public static final int light = 0x7f0a0080;
+        public static final int none = 0x7f0a0093;
+        public static final int normal = 0x7f0a0094;
+        public static final int radio = 0x7f0a00a5;
         public static final int standard = 0x7f0a00dc;
         public static final int text = 0x7f0a00fd;
         public static final int text2 = 0x7f0a00fe;

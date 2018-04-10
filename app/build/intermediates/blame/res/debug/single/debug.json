@@ -200,12 +200,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_doctor.png.flat",
-        "source": "D:\\Z\\ICUTrack\\app\\src\\main\\res\\mipmap-hdpi\\doctor.png"
-    },
-    {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\5c817fb290d334d3447ac7f9d3fa33ec\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+    },
+    {
+        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_doctor.png.flat",
+        "source": "D:\\Z\\ICUTrack\\app\\src\\main\\res\\mipmap-hdpi\\doctor.png"
     },
     {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_header.xml.flat",
@@ -232,12 +232,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_in.xml.flat",
-        "source": "D:\\Z\\ICUTrack\\app\\src\\main\\res\\layout\\activity_sign_in.xml"
-    },
-    {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_in.xml.flat",
+        "source": "D:\\Z\\ICUTrack\\app\\src\\main\\res\\layout\\activity_sign_in.xml"
     },
     {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -284,16 +284,16 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable\\abc_cab_background_internal_bg.xml"
     },
     {
-        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ss.png.flat",
-        "source": "D:\\Z\\ICUTrack\\app\\src\\main\\res\\drawable\\ss.png"
+        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_title_material.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
-        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable-xhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ss.png.flat",
+        "source": "D:\\Z\\ICUTrack\\app\\src\\main\\res\\drawable\\ss.png"
     },
     {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\layout_new_ystem.xml.flat",
@@ -336,16 +336,16 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_shrink_fade_out_from_bottom.xml.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable_side_nav_bar.xml.flat",
+        "source": "D:\\Z\\ICUTrack\\app\\src\\main\\res\\drawable\\side_nav_bar.xml"
     },
     {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable_side_nav_bar.xml.flat",
-        "source": "D:\\Z\\ICUTrack\\app\\src\\main\\res\\drawable\\side_nav_bar.xml"
+        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_shrink_fade_out_from_bottom.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_borderless_text_material.xml.flat",
@@ -396,24 +396,24 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\586e7db3fc765e8c1acc0103bcee8846\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_light.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\586e7db3fc765e8c1acc0103bcee8846\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
-    },
-    {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_view_list_nav_layout.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_checkbox.xml.flat",
@@ -440,12 +440,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_light.xml.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\color\\abc_primary_text_material_light.xml"
-    },
-    {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_design_ic_visibility.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\5c817fb290d334d3447ac7f9d3fa33ec\\res\\drawable-hdpi-v4\\design_ic_visibility.png"
+    },
+    {
+        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_light.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_out.xml.flat",
@@ -480,12 +480,12 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_textfield_search_material.xml.flat",
-        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable\\abc_textfield_search_material.xml"
-    },
-    {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable_textbox.xml.flat",
         "source": "D:\\Z\\ICUTrack\\app\\src\\main\\res\\drawable\\textbox.xml"
+    },
+    {
+        "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_textfield_search_material.xml.flat",
+        "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
         "merged": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",

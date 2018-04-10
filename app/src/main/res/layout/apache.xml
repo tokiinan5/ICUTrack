@@ -46,7 +46,7 @@
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tTemp"
-            android:layout_marginTop="8sp"
+            android:layout_marginTop="8dp"
             android:text="@string/text_Bp"
             android:textColor="#fffdfd"
             android:textSize="17sp"/>
@@ -57,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/tTemp"
+            android:background="@drawable/buttonshape"
             android:layout_marginTop="8dp">
 
 
@@ -182,6 +183,7 @@
             android:layout_marginTop="8sp"/>
 
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sHeart"
@@ -190,6 +192,7 @@
 
         </Spinner>
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sResp"
@@ -199,6 +202,7 @@
 
 
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sPaO2"
@@ -208,6 +212,7 @@
         </Spinner>
 
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sPH"
@@ -218,6 +223,7 @@
 
 
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sSodium"
@@ -228,6 +234,7 @@
 
 
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sPotassium"
@@ -237,6 +244,7 @@
         </Spinner>
 
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sCreatinine"
@@ -248,6 +256,7 @@
 
 
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sHematocrit"
@@ -257,6 +266,7 @@
         </Spinner>
 
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sWBC"
@@ -266,17 +276,9 @@
 
         </Spinner>
 
-        <Spinner
-            android:layout_width="150sp"
-            android:layout_height="wrap_content"
-            android:id="@+id/sComa"
-            android:layout_below="@id/tWbc"
-            android:layout_alignParentRight="true">
-
-        </Spinner>
-
 
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sAge"
@@ -286,6 +288,7 @@
         </Spinner>
 
         <Spinner
+            android:background="@drawable/buttonshape"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
             android:id="@+id/sChronic"
@@ -308,12 +311,22 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/rfeMale"
+            android:layout_below="@+id/tCronic"
             android:layout_marginLeft="5dp"
             android:layout_alignParentBottom="true"
 
             android:background="@drawable/custombutton"
             android:text="@string/button_Save" />
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="1-15"
+            android:id="@+id/eComa"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tWbc"
+            android:textColor="#0000"
+            android:background="@drawable/buttonshape"
+            />
 
         <Button
             android:id="@+id/bCalculate"
