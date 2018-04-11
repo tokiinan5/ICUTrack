@@ -263,19 +263,19 @@ public class Apache extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
-                    case 0: mHeart=4;
+                    case 1: mHeart=4;
                     break;
-                    case 1: mHeart=3;
+                    case 2: mHeart=3;
                     break;
-                    case 2: mHeart=2;
+                    case 3: mHeart=2;
                     break;
-                    case 3: mHeart=0;
+                    case 4: mHeart=0;
                     break;
-                    case 4: mHeart=2;
+                    case 5: mHeart=2;
                     break;
-                    case 5: mHeart=3;
+                    case 6: mHeart=3;
                     break;
-                    case 6: mHeart=4;
+                    case 7: mHeart=4;
                     break;
                     default:mHeart=0;
 
@@ -334,22 +334,22 @@ public class Apache extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i)
                 {
-                    case 0:mRespiratory=4;
+                    case 1:mRespiratory=4;
                     break;
 
-                    case 1:mRespiratory=3;
+                    case 2:mRespiratory=3;
                         break;
 
-                    case 2:mRespiratory=1;
+                    case 3:mRespiratory=1;
                         break;
 
-                    case 3:mRespiratory=0;
+                    case 4:mRespiratory=0;
                         break;
-                    case 4:mRespiratory=1;
+                    case 5:mRespiratory=1;
                         break;
-                    case 5:mRespiratory=2;
+                    case 6:mRespiratory=2;
                         break;
-                    case 6:mRespiratory=4;
+                    case 7:mRespiratory=4;
                         break;
                         default: mRespiratory=0;
 
@@ -406,18 +406,18 @@ public class Apache extends Fragment {
                 switch (i)
                 {
 
-                    case 0:mPaO2=4;
+                    case 1:mPaO2=4;
                     break;
 
-                    case 1:mPaO2=3;
+                    case 2:mPaO2=3;
                         break;
-                    case 2:mPaO2=1;
+                    case 3:mPaO2=1;
                         break;
-                        case 3:mPaO2=0;
+                        case 4:mPaO2=0;
                     break;
-                    case 4:mPaO2=1;
+                    case 5:mPaO2=1;
                     break;
-                    case 5:mPaO2=3;
+                    case 6:mPaO2=3;
                     break;
                     default:mPaO2=0;
 
@@ -472,17 +472,17 @@ public class Apache extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
-                    case 0: mPh=4;
+                    case 1: mPh=4;
                     break;
-                    case 1: mPh=3;
+                    case 2: mPh=3;
                         break;
-                    case 2: mPh=1;
+                    case 3: mPh=1;
                         break;
-                    case 3: mPh=0;
+                    case 4: mPh=0;
                         break;
-                    case 4: mPh=2;
+                    case 5: mPh=2;
                         break;
-                    case 5: mPh=4;
+                    case 6: mPh=4;
                         break;
                         default:mPh=0;
                 }
@@ -536,21 +536,21 @@ public class Apache extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
-                    case 0: mSodium=4;
+                    case 1: mSodium=4;
                     break;
-                    case 1: mSodium=3;
+                    case 2: mSodium=3;
                         break;
-                    case 2: mSodium=2;
+                    case 3: mSodium=2;
                         break;
-                    case 3: mSodium=1;
+                    case 4: mSodium=1;
                         break;
-                    case 4: mSodium=0;
+                    case 5: mSodium=0;
                         break;
-                    case 5: mSodium=2;
+                    case 6: mSodium=2;
                         break;
-                    case 6: mSodium=3;
+                    case 7: mSodium=3;
                         break;
-                    case 7: mSodium=4;
+                    case 8: mSodium=4;
                         break;
                     default:mSodium=0;
                 }
@@ -603,19 +603,19 @@ public class Apache extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i){
-                    case 0: mPotassium=4;
+                    case 1: mPotassium=4;
                     break;
-                    case 1: mPotassium=3;
+                    case 2: mPotassium=3;
                         break;
-                    case 2: mPotassium=1;
+                    case 3: mPotassium=1;
                         break;
-                    case 3: mPotassium=0;
+                    case 4: mPotassium=0;
                         break;
-                    case 4: mPotassium=1;
+                    case 5: mPotassium=1;
                         break;
-                    case 5: mPotassium=2;
+                    case 6: mPotassium=2;
                         break;
-                    case 6: mPotassium=4;
+                    case 7: mPotassium=4;
                         break;
                         default:mPotassium=0;
 
@@ -668,16 +668,16 @@ public class Apache extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i)
                 {
-                    case 0: mCreatinine=4;
+                    case 1: mCreatinine=4;
                     break;
 
-                    case 1: mCreatinine=3;
+                    case 2: mCreatinine=3;
                     break;
-                    case 2: mCreatinine=2;
+                    case 3: mCreatinine=2;
                     break;
-                    case 3: mCreatinine=0;
+                    case 4: mCreatinine=0;
                     break;
-                    case 4: mCreatinine=2;
+                    case 5: mCreatinine=2;
                     break;
                     default:mCreatinine=0;
 
@@ -731,17 +731,17 @@ public class Apache extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
-                    case 0: mHematocrit=4;
+                    case 1: mHematocrit=4;
                     break;
-                    case 1: mHematocrit=2;
+                    case 2: mHematocrit=2;
                     break;
-                    case 2: mHematocrit=1;
+                    case 3: mHematocrit=1;
                         break;
-                        case 3: mHematocrit=0;
+                        case 4: mHematocrit=0;
                         break;
-                        case 4: mHematocrit=2;
+                        case 5: mHematocrit=2;
                         break;
-                    case 5: mHematocrit=4;
+                    case 6: mHematocrit=4;
                         break;
                         default:mHematocrit=0;
                 }
@@ -792,17 +792,17 @@ public class Apache extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i){
-                    case 0: mWBc=4;
+                    case 1: mWBc=4;
                     break;
-                    case 1: mWBc=2;
+                    case 2: mWBc=2;
                         break;
-                    case 2: mWBc=1;
+                    case 3: mWBc=1;
                         break;
-                    case 3: mWBc=0;
+                    case 4: mWBc=0;
                         break;
-                    case 4: mWBc=2;
+                    case 5: mWBc=2;
                         break;
-                    case 5: mWBc=4;
+                    case 6: mWBc=4;
                         break;
                         default:mWBc=0;
 
@@ -896,14 +896,14 @@ public class Apache extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i)
                 {
-                    case 0: mCritical=0;
+                    case 1: mCritical=0;
                     break;
-                    case 1: mCritical=5;
-                        break;
-
                     case 2: mCritical=5;
                         break;
-                    case 3: mCritical=2;
+
+                    case 3: mCritical=5;
+                        break;
+                    case 4: mCritical=2;
                         break;
                         default:mCritical=0;
 
@@ -957,15 +957,15 @@ public class Apache extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i)
                 {
-                    case 0: mAge=6;
+                    case 1: mAge=6;
                     break;
-                    case 1: mAge=5;
+                    case 2: mAge=5;
                         break;
-                    case 2: mAge=3;
+                    case 3: mAge=3;
                         break;
-                        case 3: mAge=2;
+                        case 4: mAge=2;
                     break;
-                    case 4: mAge=0;
+                    case 5: mAge=0;
                         break;
                         default:mAge=0;
 
