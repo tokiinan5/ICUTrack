@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+            "outputFile": "F:\\ICUTrack\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\Toki\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\4c3ecdb2e64f8db1212fb8428add4452\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
