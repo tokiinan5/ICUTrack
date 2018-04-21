@@ -31,12 +31,12 @@ import static java.security.AccessController.getContext;
  * A simple {@link Fragment} subclass.
  */
 public class Apache extends Fragment {
-    Spinner sTemp,sBp,sHeart,sRespiratory,sPaO2,sPh,sSodium,sPotassium,sCreatinine,sAage,
+   private Spinner sTemp,sBp,sHeart,sRespiratory,sPaO2,sPh,sSodium,sPotassium,sCreatinine,sAage,
     sHematocrit,sWBc,sComa,sCritical;
-    int mTemp,mBp,mHeart,mRespiratory,mPaO2,mPh,mSodium,mPotassium,mCreatinine,mAge,
+   private int mTemp,mBp,mHeart,mRespiratory,mPaO2,mPh,mSodium,mPotassium,mCreatinine,mAge,
             mHematocrit,mWBc,mComa,mCritical,summ;
-    EditText eComa;
-    Button bSave,bReset,bCalculate;
+   private EditText eComa;
+   private Button bSave,bReset,bCalculate;
 
 
     View view;

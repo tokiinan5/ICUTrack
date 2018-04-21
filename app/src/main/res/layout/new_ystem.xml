@@ -18,34 +18,36 @@
         android:layout_marginBottom="20dp"
         android:paddingBottom="30dp"
         >
-
         <TextView
-            android:id="@+id/tBUN"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:id="@+id/tTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
             android:paddingTop="8dp"
-            android:text="@string/text_BUN"
+            android:text="@string/text_Temperature"
             android:textColor="#fffdfd"
             android:textSize="17dp" />
 
+
         <EditText
-            android:id="@+id/eBUN"
+            android:id="@+id/eTemp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_marginTop="7dp"
             android:layout_alignParentTop="true"
             android:background="@drawable/buttonshape"
-            android:hint="@string/text_BUN" />
+            android:hint="@string/text_Temperature" />
+
+
+
 
         <TextView
+            android:layout_below="@+id/tTemp"
             android:id="@+id/tBillirubin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/eBUN"
             android:paddingTop="8dp"
             android:text="@string/text_Bilirubin"
             android:textColor="#fffdfd"
@@ -57,76 +59,19 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/eBUN"
             android:layout_marginTop="7dp"
+            android:layout_below="@id/tTemp"
+
             android:background="@drawable/buttonshape"
             android:hint="@string/text_Bilirubin" />
 
-        <TextView
-            android:id="@+id/tBiCo2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/eBilirubin"
-            android:layout_marginTop="10dp"
-            android:text="@string/text_BiCO2"
-            android:textColor="#fffdfd"
-            android:textSize="17dp" />
 
-        <EditText
-            android:id="@+id/eBiCo2"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/eBilirubin"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/buttonshape"
-            android:hint="@string/text_BiCO2" />
-
-        <TextView
-            android:id="@+id/tAlbumin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/eBiCo2"
-            android:layout_marginTop="8dp"
-            android:text="@string/text_Albumin"
-            android:textColor="#fffdfd"
-            android:textSize="17dp"/>
-
-        <EditText
-            android:id="@+id/eAlbumin"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/eBiCo2"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/buttonshape"
-            android:hint="@string/text_Albumin" />
-
-        <TextView
-            android:id="@+id/tGlucose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/eAlbumin"
-            android:layout_marginTop="8dp"
-            android:text="@string/text_Glucose"
-            android:textColor="#fffdfd"
-            android:textSize="17dp"/>
-
-        <EditText
-            android:id="@+id/eGlucose"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/eAlbumin"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/buttonshape"
-            android:hint="@string/text_Glucose" />
 
         <TextView
             android:id="@+id/tPlatelet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/eGlucose"
+            android:layout_below="@id/eBilirubin"
             android:layout_marginTop="8dp"
             android:text="@string/text_Platelet"
             android:textColor="#fffdfd"
@@ -331,30 +276,6 @@
             android:background="@drawable/buttonshape"
             android:hint="@string/text_Age" />
 
-        <TextView
-            android:id="@+id/tAdmission"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/eAge"
-            android:layout_marginTop="5dp"
-            android:text="@string/text_Admission"
-            android:textColor="#fffdfd"
-            android:textSize="17dp" />
-
-        <Spinner
-            android:id="@+id/sAdmmission"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/eAge"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/buttonshape">
-
-
-        </Spinner>
-
-
         <Button
             android:id="@+id/bCalculate"
             android:layout_width="100dp"
@@ -373,7 +294,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/sAdmmission"
+            android:layout_below="@id/eAge"
             android:layout_marginTop="15dp"
             android:text="@string/text_Gender"
             android:textColor="#fffdfd"
@@ -385,7 +306,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
 
-            android:layout_below="@id/sAdmmission"
+            android:layout_below="@id/eAge"
             android:layout_marginTop="5dp"
             android:background="@drawable/buttonshape"
             android:text="@string/gender_male" />
