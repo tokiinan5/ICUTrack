@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Z\\ICUTrack\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "G:\\ICUTrack\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\f39598cd3ba1c651d8a028bfd693592f\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Toki\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\7fad31ecdb54c1979323e66589446924\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\4bf79e0e73c15b16cdfccbd079ebebfb\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Toki\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\37d7999516871738405de15c9af393f7\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

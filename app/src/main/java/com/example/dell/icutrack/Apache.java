@@ -18,6 +18,9 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,6 +61,12 @@ public class Apache extends Fragment {
         view = inflater.inflate(apache, container, false);
 
         init();
+        bSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dataSave();
+            }
+        });
 
         return view;
     }
@@ -1049,6 +1058,14 @@ public class Apache extends Fragment {
 
             }
         });
+    }
+
+    private  void dataSave(){
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+        ApacheFeatures features=new ApacheFeatures();
+        features.setAge(45);
+        features.setBloodPressure(1000);
+        reference.child("IPRS").child("Val").setValue(features);
     }
 
 
