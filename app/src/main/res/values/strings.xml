@@ -238,6 +238,16 @@
 
     </string-array>
 
+    <string name="apache_1">4% non-operation 1% Post Operation</string>
+    <string name="apache_2">8% non-operation 3% Post Operation</string>
+    <string name="apache_3">15% non-operation 7% Post Operation</string>
+    <string name="apache_4">24% non-operation 12% Post Operation</string>
+    <string name="apache_5">40% non-operation 30% Post Operation</string>
+    <string name="apache_6">55% non-operation 35% Post Operation</string>
+
+    <string name="apache_7">Approx 75% both </string>
+    <string name="apache_8">88% non-operation 83% Post Operation</string>
+
 
 
 

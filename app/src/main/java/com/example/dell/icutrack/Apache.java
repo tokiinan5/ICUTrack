@@ -31,19 +31,20 @@ import static java.security.AccessController.getContext;
  * A simple {@link Fragment} subclass.
  */
 public class Apache extends Fragment {
-   private Spinner sTemp,sBp,sHeart,sRespiratory,sPaO2,sPh,sSodium,sPotassium,sCreatinine,sAage,
-    sHematocrit,sWBc,sComa,sCritical;
-   private int mTemp,mBp,mHeart,mRespiratory,mPaO2,mPh,mSodium,mPotassium,mCreatinine,mAge,
-            mHematocrit,mWBc,mComa,mCritical,summ;
-   private EditText eComa;
-   private Button bSave,bReset,bCalculate;
+    private Spinner sTemp, sBp, sHeart, sRespiratory, sPaO2, sPh, sSodium, sPotassium, sCreatinine, sAage,
+            sHematocrit, sWBc, sComa, sCritical;
+    private int mTemp, mBp, mHeart, mRespiratory, mPaO2, mPh, mSodium, mPotassium, mCreatinine, mAge,
+            mHematocrit, mWBc, mComa, mCritical, summ;
+    private EditText eComa;
+    String result;
+    private Button bSave, bReset, bCalculate;
+    TextView tResult;
 
 
     View view;
 
-    ArrayAdapter adapterTemp,adapterBp,adapterHeart,adapterRespiratory,adapterPaO2,adapterPh,adapterSodium,adapterPotassium
-            ,adapterCreatinine,adapterAge,
-            adapterHematocrit,adapterWBc,adapterComa,adapterCritical;
+    ArrayAdapter adapterTemp, adapterBp, adapterHeart, adapterRespiratory, adapterPaO2, adapterPh, adapterSodium, adapterPotassium, adapterCreatinine, adapterAge,
+            adapterHematocrit, adapterWBc, adapterComa, adapterCritical;
 
 
     public Apache() {
@@ -54,7 +55,7 @@ public class Apache extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view=inflater.inflate(apache,container,false);
+        view = inflater.inflate(apache, container, false);
 
         init();
 
@@ -62,129 +63,131 @@ public class Apache extends Fragment {
     }
 
     private void init() {
-        sTemp=view.findViewById(R.id.sTemp);
-        sBp=view.findViewById(R.id.sBp);
-        sHeart=view.findViewById(R.id.sHeart);
-        sRespiratory=view.findViewById(R.id.sResp);
-        sPaO2=view.findViewById(R.id.sPaO2);
-        sPh=view.findViewById(R.id.sPH);
-        sSodium=view.findViewById(R.id.sSodium);
-        sPotassium=view.findViewById(R.id.sPotassium);
-        sCreatinine=view.findViewById(R.id.sCreatinine);
-        sHematocrit=view.findViewById(R.id.sHematocrit);
-        sWBc=view.findViewById(R.id.sWBC);
-        summ=0;
-      //  sComa=view.findViewById(R.id.sComa);
-        sCritical=view.findViewById(R.id.sChronic);
-        sAage=view.findViewById(R.id.sAge);
-        eComa=view.findViewById(R.id.eComa);
-        bCalculate=view.findViewById(R.id.bCalculate);
-        bSave=view.findViewById(R.id.bSave);
-        bReset=view.findViewById(R.id.bReset);
+        sTemp = view.findViewById(R.id.sTemp);
+        sBp = view.findViewById(R.id.sBp);
+        sHeart = view.findViewById(R.id.sHeart);
+        sRespiratory = view.findViewById(R.id.sResp);
+        sPaO2 = view.findViewById(R.id.sPaO2);
+        sPh = view.findViewById(R.id.sPH);
+        sSodium = view.findViewById(R.id.sSodium);
+        sPotassium = view.findViewById(R.id.sPotassium);
+        sCreatinine = view.findViewById(R.id.sCreatinine);
+        sHematocrit = view.findViewById(R.id.sHematocrit);
+        sWBc = view.findViewById(R.id.sWBC);
+        summ = 0;
+        //  sComa=view.findViewById(R.id.sComa);
+        sCritical = view.findViewById(R.id.sChronic);
+        sAage = view.findViewById(R.id.sAge);
+        eComa = view.findViewById(R.id.eComa);
+        bCalculate = view.findViewById(R.id.bCalculate);
+        bSave = view.findViewById(R.id.bSave);
+        bReset = view.findViewById(R.id.bReset);
+        tResult=view.findViewById(R.id.tResult);
 
         //Spinner For Temperature
 
         List<String> tempList = Arrays.asList(getResources().getStringArray(R.array.Temperature_Array));
-     adapterTemp=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,tempList){
-         @Override
-         public boolean isEnabled(int position){
-             if(position == 0)
-             {
-                 // Disable the first item from Spinner
-                 // First item will be use for hint
-                 return false;
-             }
-             else
-             {
-                 return true;
-             }
-         }
-         @Override
-         public View getDropDownView(int position, View convertView,
-                                     ViewGroup parent) {
-             View view = super.getDropDownView(position, convertView, parent);
-             TextView tv = (TextView) view;
-             if(position == 0){
-                 // Set the hint text color gray
-                 tv.setTextColor(Color.GRAY);
-             }
-             else {
-                 tv.setTextColor(Color.BLACK);
-             }
-             return view;
-         }
-
-     };
-     adapterTemp.setDropDownViewResource(android.R.layout.simple_spinner_item);
-     sTemp.setAdapter(adapterTemp);
-
-     sTemp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-         @Override
-         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            // summation=0;
-
-
-
-             switch (i){
-
-                 case 1: mTemp=4;
-                      break;
-                 case  2: mTemp=3;
-                 break;
-                 case  3: mTemp=1;
-                 break;
-                 case 4: mTemp=0;
-                 break;
-                 case 5: mTemp=1;
-                 break;
-                 case 6: mTemp=2;
-                 break;
-                 case 7: mTemp=3;
-                 break;
-                 default:mTemp=0;
-
-             }
-           //  Toast.makeText(getContext(), String.valueOf(summation), Toast.LENGTH_SHORT).show();
-
-             summ=summ+mTemp;
-             //Toast.makeText(getContext(), String.valueOf(mTemp), Toast.LENGTH_SHORT).show();
-
-
-         }
-
-         @Override
-         public void onNothingSelected(AdapterView<?> adapterView) {
-
-         }
-     });
-
-     //Spinner for BP
-
-        final List<String> bpList = Arrays.asList(getResources().getStringArray(R.array.Bp_Array));
-        adapterBp=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,bpList){
+        adapterTemp = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, tempList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
+                } else {
+                    tv.setTextColor(Color.BLACK);
                 }
-                else {
+                return view;
+            }
+
+        };
+        adapterTemp.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        sTemp.setAdapter(adapterTemp);
+
+        sTemp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // summation=0;
+
+
+                switch (i) {
+
+                    case 1:
+                        mTemp = 4;
+                        break;
+                    case 2:
+                        mTemp = 3;
+                        break;
+                    case 3:
+                        mTemp = 1;
+                        break;
+                    case 4:
+                        mTemp = 0;
+                        break;
+                    case 5:
+                        mTemp = 1;
+                        break;
+                    case 6:
+                        mTemp = 2;
+                        break;
+                    case 7:
+                        mTemp = 3;
+                        break;
+                    default:
+                        mTemp = 0;
+
+                }
+                //  Toast.makeText(getContext(), String.valueOf(summation), Toast.LENGTH_SHORT).show();
+
+                summ = summ + mTemp;
+                //Toast.makeText(getContext(), String.valueOf(mTemp), Toast.LENGTH_SHORT).show();
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        //Spinner for BP
+
+        final List<String> bpList = Arrays.asList(getResources().getStringArray(R.array.Bp_Array));
+        adapterBp = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, bpList) {
+            @Override
+            public boolean isEnabled(int position) {
+                if (position == 0) {
+                    // Disable the first item from Spinner
+                    // First item will be use for hint
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+            @Override
+            public View getDropDownView(int position, View convertView,
+                                        ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView tv = (TextView) view;
+                if (position == 0) {
+                    // Set the hint text color gray
+                    tv.setTextColor(Color.GRAY);
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -196,25 +199,32 @@ public class Apache extends Fragment {
         sBp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.e("Result111111111111111",String.valueOf(summ));
-               // Toast.makeText(getContext(),bpList.get(i).toString(),Toast.LENGTH_SHORT).show();
-                switch (i){
-                    case 1:mBp=4;
-                    break;
-                    case 2:mBp=3;
-                    break;
-                    case 3:mBp=2;
-                    break;
-                    case 4: mBp=0;
-                    break;
-                    case 5: mBp=2;
-                    break;
-                    case 6: mBp=4;
-                    break;
-                    default:mBp=0;
+                Log.e("Result111111111111111", String.valueOf(summ));
+                // Toast.makeText(getContext(),bpList.get(i).toString(),Toast.LENGTH_SHORT).show();
+                switch (i) {
+                    case 1:
+                        mBp = 4;
+                        break;
+                    case 2:
+                        mBp = 3;
+                        break;
+                    case 3:
+                        mBp = 2;
+                        break;
+                    case 4:
+                        mBp = 0;
+                        break;
+                    case 5:
+                        mBp = 2;
+                        break;
+                    case 6:
+                        mBp = 4;
+                        break;
+                    default:
+                        mBp = 0;
 
                 }
-               summ=summ+mBp;
+                summ = summ + mBp;
             }
 
 
@@ -227,30 +237,27 @@ public class Apache extends Fragment {
         //Spinner For Heart Rate
 //Log.e("Result", String.valueOf(summation));
         List<String> heartList = Arrays.asList(getResources().getStringArray(R.array.Heart_Array));
-        adapterHeart=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,heartList){
+        adapterHeart = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, heartList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -262,25 +269,33 @@ public class Apache extends Fragment {
         sHeart.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i){
-                    case 1: mHeart=4;
-                    break;
-                    case 2: mHeart=3;
-                    break;
-                    case 3: mHeart=2;
-                    break;
-                    case 4: mHeart=0;
-                    break;
-                    case 5: mHeart=2;
-                    break;
-                    case 6: mHeart=3;
-                    break;
-                    case 7: mHeart=4;
-                    break;
-                    default:mHeart=0;
+                switch (i) {
+                    case 1:
+                        mHeart = 4;
+                        break;
+                    case 2:
+                        mHeart = 3;
+                        break;
+                    case 3:
+                        mHeart = 2;
+                        break;
+                    case 4:
+                        mHeart = 0;
+                        break;
+                    case 5:
+                        mHeart = 2;
+                        break;
+                    case 6:
+                        mHeart = 3;
+                        break;
+                    case 7:
+                        mHeart = 4;
+                        break;
+                    default:
+                        mHeart = 0;
 
                 }
-               summ=summ+mHeart;
+                summ = summ + mHeart;
 
             }
 
@@ -291,36 +306,31 @@ public class Apache extends Fragment {
         });
 
 
-
-
         //Spinner for Respiratory
 
 
         List<String> respList = Arrays.asList(getResources().getStringArray(R.array.Respiratory_Array));
-        adapterRespiratory=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,respList){
+        adapterRespiratory = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, respList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -332,29 +342,36 @@ public class Apache extends Fragment {
         sRespiratory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch(i)
-                {
-                    case 1:mRespiratory=4;
-                    break;
-
-                    case 2:mRespiratory=3;
+                switch (i) {
+                    case 1:
+                        mRespiratory = 4;
                         break;
 
-                    case 3:mRespiratory=1;
+                    case 2:
+                        mRespiratory = 3;
                         break;
 
-                    case 4:mRespiratory=0;
+                    case 3:
+                        mRespiratory = 1;
                         break;
-                    case 5:mRespiratory=1;
+
+                    case 4:
+                        mRespiratory = 0;
                         break;
-                    case 6:mRespiratory=2;
+                    case 5:
+                        mRespiratory = 1;
                         break;
-                    case 7:mRespiratory=4;
+                    case 6:
+                        mRespiratory = 2;
                         break;
-                        default: mRespiratory=0;
+                    case 7:
+                        mRespiratory = 4;
+                        break;
+                    default:
+                        mRespiratory = 0;
 
                 }
-                summ=summ+mRespiratory;
+                summ = summ + mRespiratory;
 
             }
 
@@ -368,30 +385,27 @@ public class Apache extends Fragment {
 
 
         List<String> paO2List = Arrays.asList(getResources().getStringArray(R.array.Pa02_Array));
-        adapterPaO2=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,paO2List){
+        adapterPaO2 = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, paO2List) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -403,26 +417,32 @@ public class Apache extends Fragment {
         sPaO2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i)
-                {
+                switch (i) {
 
-                    case 1:mPaO2=4;
-                    break;
+                    case 1:
+                        mPaO2 = 4;
+                        break;
 
-                    case 2:mPaO2=3;
+                    case 2:
+                        mPaO2 = 3;
                         break;
-                    case 3:mPaO2=1;
+                    case 3:
+                        mPaO2 = 1;
                         break;
-                        case 4:mPaO2=0;
-                    break;
-                    case 5:mPaO2=1;
-                    break;
-                    case 6:mPaO2=3;
-                    break;
-                    default:mPaO2=0;
+                    case 4:
+                        mPaO2 = 0;
+                        break;
+                    case 5:
+                        mPaO2 = 1;
+                        break;
+                    case 6:
+                        mPaO2 = 3;
+                        break;
+                    default:
+                        mPaO2 = 0;
 
                 }
-                summ=summ+mPaO2;
+                summ = summ + mPaO2;
 
             }
 
@@ -436,30 +456,27 @@ public class Apache extends Fragment {
 
 
         List<String> pHList = Arrays.asList(getResources().getStringArray(R.array.PH_Array));
-        adapterPh=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,pHList){
+        adapterPh = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, pHList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -471,22 +488,29 @@ public class Apache extends Fragment {
         sPh.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i){
-                    case 1: mPh=4;
-                    break;
-                    case 2: mPh=3;
+                switch (i) {
+                    case 1:
+                        mPh = 4;
                         break;
-                    case 3: mPh=1;
+                    case 2:
+                        mPh = 3;
                         break;
-                    case 4: mPh=0;
+                    case 3:
+                        mPh = 1;
                         break;
-                    case 5: mPh=2;
+                    case 4:
+                        mPh = 0;
                         break;
-                    case 6: mPh=4;
+                    case 5:
+                        mPh = 2;
                         break;
-                        default:mPh=0;
+                    case 6:
+                        mPh = 4;
+                        break;
+                    default:
+                        mPh = 0;
                 }
-                summ=summ+mPh;
+                summ = summ + mPh;
 
             }
 
@@ -500,30 +524,27 @@ public class Apache extends Fragment {
 
 
         final List<String> sodiumList = Arrays.asList(getResources().getStringArray(R.array.Sodium_Array));
-        adapterSodium=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,sodiumList){
+        adapterSodium = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, sodiumList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -535,26 +556,35 @@ public class Apache extends Fragment {
         sSodium.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i){
-                    case 1: mSodium=4;
-                    break;
-                    case 2: mSodium=3;
+                switch (i) {
+                    case 1:
+                        mSodium = 4;
                         break;
-                    case 3: mSodium=2;
+                    case 2:
+                        mSodium = 3;
                         break;
-                    case 4: mSodium=1;
+                    case 3:
+                        mSodium = 2;
                         break;
-                    case 5: mSodium=0;
+                    case 4:
+                        mSodium = 1;
                         break;
-                    case 6: mSodium=2;
+                    case 5:
+                        mSodium = 0;
                         break;
-                    case 7: mSodium=3;
+                    case 6:
+                        mSodium = 2;
                         break;
-                    case 8: mSodium=4;
+                    case 7:
+                        mSodium = 3;
                         break;
-                    default:mSodium=0;
+                    case 8:
+                        mSodium = 4;
+                        break;
+                    default:
+                        mSodium = 0;
                 }
-                summ=summ+mSodium;
+                summ = summ + mSodium;
 
             }
 
@@ -567,30 +597,27 @@ public class Apache extends Fragment {
         // spinner Potassium
 
         List<String> potassiumList = Arrays.asList(getResources().getStringArray(R.array.Potassium_Array));
-        adapterPotassium=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,potassiumList){
+        adapterPotassium = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, potassiumList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -602,24 +629,33 @@ public class Apache extends Fragment {
         sPotassium.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch(i){
-                    case 1: mPotassium=4;
-                    break;
-                    case 2: mPotassium=3;
+                switch (i) {
+                    case 1:
+                        mPotassium = 4;
                         break;
-                    case 3: mPotassium=1;
+                    case 2:
+                        mPotassium = 3;
                         break;
-                    case 4: mPotassium=0;
+                    case 3:
+                        mPotassium = 1;
                         break;
-                    case 5: mPotassium=1;
+                    case 4:
+                        mPotassium = 0;
                         break;
-                    case 6: mPotassium=2;
+                    case 5:
+                        mPotassium = 1;
                         break;
-                    case 7: mPotassium=4;
+                    case 6:
+                        mPotassium = 2;
                         break;
-                        default:mPotassium=0;
+                    case 7:
+                        mPotassium = 4;
+                        break;
+                    default:
+                        mPotassium = 0;
 
-                }summ=summ+mPotassium;
+                }
+                summ = summ + mPotassium;
             }
 
             @Override
@@ -631,30 +667,27 @@ public class Apache extends Fragment {
         //Spinner for Creatinine
 
         List<String> creatinineList = Arrays.asList(getResources().getStringArray(R.array.Creatinine_Array));
-        adapterCreatinine=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,creatinineList){
+        adapterCreatinine = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, creatinineList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -666,23 +699,28 @@ public class Apache extends Fragment {
         sCreatinine.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i)
-                {
-                    case 1: mCreatinine=4;
-                    break;
+                switch (i) {
+                    case 1:
+                        mCreatinine = 4;
+                        break;
 
-                    case 2: mCreatinine=3;
-                    break;
-                    case 3: mCreatinine=2;
-                    break;
-                    case 4: mCreatinine=0;
-                    break;
-                    case 5: mCreatinine=2;
-                    break;
-                    default:mCreatinine=0;
+                    case 2:
+                        mCreatinine = 3;
+                        break;
+                    case 3:
+                        mCreatinine = 2;
+                        break;
+                    case 4:
+                        mCreatinine = 0;
+                        break;
+                    case 5:
+                        mCreatinine = 2;
+                        break;
+                    default:
+                        mCreatinine = 0;
 
                 }
-               // summation=summation+mCreatinine;
+                // summation=summation+mCreatinine;
 
             }
 
@@ -695,30 +733,27 @@ public class Apache extends Fragment {
         // Spinner Hematocrit
 
         List<String> hemaList = Arrays.asList(getResources().getStringArray(R.array.Hematocrit_Array));
-        adapterHematocrit=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,hemaList){
+        adapterHematocrit = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, hemaList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -730,22 +765,29 @@ public class Apache extends Fragment {
         sHematocrit.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i){
-                    case 1: mHematocrit=4;
-                    break;
-                    case 2: mHematocrit=2;
-                    break;
-                    case 3: mHematocrit=1;
+                switch (i) {
+                    case 1:
+                        mHematocrit = 4;
                         break;
-                        case 4: mHematocrit=0;
+                    case 2:
+                        mHematocrit = 2;
                         break;
-                        case 5: mHematocrit=2;
+                    case 3:
+                        mHematocrit = 1;
                         break;
-                    case 6: mHematocrit=4;
+                    case 4:
+                        mHematocrit = 0;
                         break;
-                        default:mHematocrit=0;
+                    case 5:
+                        mHematocrit = 2;
+                        break;
+                    case 6:
+                        mHematocrit = 4;
+                        break;
+                    default:
+                        mHematocrit = 0;
                 }
-                summ=summ+mHematocrit;
+                summ = summ + mHematocrit;
             }
 
             @Override
@@ -756,30 +798,27 @@ public class Apache extends Fragment {
         // Spinner WBC
 
         List<String> wbcList = Arrays.asList(getResources().getStringArray(R.array.Wbc_Array));
-        adapterWBc=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,wbcList){
+        adapterWBc = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, wbcList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -791,24 +830,31 @@ public class Apache extends Fragment {
         sWBc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch(i){
-                    case 1: mWBc=4;
-                    break;
-                    case 2: mWBc=2;
+                switch (i) {
+                    case 1:
+                        mWBc = 4;
                         break;
-                    case 3: mWBc=1;
+                    case 2:
+                        mWBc = 2;
                         break;
-                    case 4: mWBc=0;
+                    case 3:
+                        mWBc = 1;
                         break;
-                    case 5: mWBc=2;
+                    case 4:
+                        mWBc = 0;
                         break;
-                    case 6: mWBc=4;
+                    case 5:
+                        mWBc = 2;
                         break;
-                        default:mWBc=0;
+                    case 6:
+                        mWBc = 4;
+                        break;
+                    default:
+                        mWBc = 0;
 
 
                 }
-               summ=summ+mWBc;
+                summ = summ + mWBc;
             }
 
             @Override
@@ -859,30 +905,27 @@ public class Apache extends Fragment {
 
 
         List<String> criticalList = Arrays.asList(getResources().getStringArray(R.array.Critical_Array));
-        adapterCritical=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,criticalList){
+        adapterCritical = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, criticalList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -894,22 +937,26 @@ public class Apache extends Fragment {
         sCritical.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i)
-                {
-                    case 1: mCritical=0;
-                    break;
-                    case 2: mCritical=5;
+                switch (i) {
+                    case 1:
+                        mCritical = 0;
+                        break;
+                    case 2:
+                        mCritical = 5;
                         break;
 
-                    case 3: mCritical=5;
+                    case 3:
+                        mCritical = 5;
                         break;
-                    case 4: mCritical=2;
+                    case 4:
+                        mCritical = 2;
                         break;
-                        default:mCritical=0;
+                    default:
+                        mCritical = 0;
 
 
                 }
-               summ=summ+mCritical;
+                summ = summ + mCritical;
             }
 
             @Override
@@ -919,31 +966,28 @@ public class Apache extends Fragment {
         });
 
         //Age
-        List<String>ageList=Arrays.asList(getResources().getStringArray(R.array.Age_Array));
-        adapterAge=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,ageList){
+        List<String> ageList = Arrays.asList(getResources().getStringArray(R.array.Age_Array));
+        adapterAge = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, ageList) {
             @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
+            public boolean isEnabled(int position) {
+                if (position == 0) {
                     // Disable the first item from Spinner
                     // First item will be use for hint
                     return false;
-                }
-                else
-                {
+                } else {
                     return true;
                 }
             }
+
             @Override
             public View getDropDownView(int position, View convertView,
                                         ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
-                if(position == 0){
+                if (position == 0) {
                     // Set the hint text color gray
                     tv.setTextColor(Color.GRAY);
-                }
-                else {
+                } else {
                     tv.setTextColor(Color.BLACK);
                 }
                 return view;
@@ -955,22 +999,27 @@ public class Apache extends Fragment {
         sAage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i)
-                {
-                    case 1: mAge=6;
-                    break;
-                    case 2: mAge=5;
+                switch (i) {
+                    case 1:
+                        mAge = 6;
                         break;
-                    case 3: mAge=3;
+                    case 2:
+                        mAge = 5;
                         break;
-                        case 4: mAge=2;
-                    break;
-                    case 5: mAge=0;
+                    case 3:
+                        mAge = 3;
                         break;
-                        default:mAge=0;
+                    case 4:
+                        mAge = 2;
+                        break;
+                    case 5:
+                        mAge = 0;
+                        break;
+                    default:
+                        mAge = 0;
 
                 }
-               summ=summ+mAge;
+                summ = summ + mAge;
             }
 
             @Override
@@ -980,43 +1029,76 @@ public class Apache extends Fragment {
         });
 
 
-            if(TextUtils.isEmpty(eComa.getText().toString()))
-            {
-                mAge = 0;
+        if (TextUtils.isEmpty(eComa.getText().toString())) {
+            mAge = 0;
+        } else {
+            mAge = 15 - Integer.parseInt(eComa.getText().toString());
+        }
+
+        // summation=summation+mAge;
+        bCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                result1();
+                Log.e("Resulthhfdsjfjd", String.valueOf(result));
+
+                //Toast.makeText(getContext(), result, Toast.LENGTH_SHORT));
+                // tResult.setText("Outcome:  "+result.toString());
+
+
             }
-            else
-                {
-                    mAge=15-Integer.parseInt(eComa.getText().toString());
-                }
-
-               // summation=summation+mAge;
-            bSave.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.e("Result",String.valueOf(summ));
-                }
-            });
+        });
+    }
 
 
+    private void result1() {
+
+        if (summ >= 0 && summ <= 4) {
+           // Toast.makeText(getContext(), "Resuklt", Toast.LENGTH_SHORT).show();
+            result = getResources().getString(R.string.apache_1);
+
+        }
+
+        if (summ > 4 && summ <= 9) {
+            result = getResources().getString(R.string.apache_2);
+        }
+        if (summ > 9 && summ <= 14) {
+            result = getResources().getString(R.string.apache_3);
+        }
+
+        if (summ > 14 && summ <= 19) {
+            result = getResources().getString(R.string.apache_4);
+        }
 
 
+        if (summ > 19 && summ <= 24) {
+            result = getResources().getString(R.string.apache_5);
+        }
 
 
+        if (summ > 24 && summ <= 29) {
+            result = getResources().getString(R.string.apache_6);
+        }
 
+        if (summ > 29 && summ <= 34) {
+            result = getResources().getString(R.string.apache_7);
+        }
 
-
-
-
-
-
-
-
-
-
-
+        if (summ > 35 && summ <= 100) {
+            result = getResources().getString(R.string.apache_8);
+        }
 
     }
 
 
-
 }
+
+
+
+
+
+
+
+
+

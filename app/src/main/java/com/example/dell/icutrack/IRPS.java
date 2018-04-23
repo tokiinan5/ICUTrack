@@ -1,6 +1,7 @@
 package com.example.dell.icutrack;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,6 +26,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Calendar;
 
 
+import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.functions.MultilayerPerceptron;
+
 import static com.example.dell.icutrack.R.layout.new_ystem;
 
 /**
@@ -36,27 +40,23 @@ public class IRPS extends Fragment {
      private  RadioButton rMale,rFemale;
     private double pAge,pBillirubin,pPlatelate,pLos,pPaO2,pSodium,pPotassium,pCreatinine,pWbc,pHematocrit,pTemp,pPh;
     private  String pGender;
-    private  String error="Can not be empty";
- //  NaiveBayes perceptron=null;
+    String error="Can not be empty";
+    Context context;
 
 
-  /*    try {
-        perceptron= (MultilayerPerceptron) weka.core.SerializationHelper.read(getAssets().open("multi.model"));
-        //  Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
-    } catch (Exception e) {
-        e.printStackTrace();
-    }*/
+
+
 
 
 
     View myView;
     Button bSave,bReset,bCalculate;
 
+   public  IRPS()
+   {
 
+   }
 
-    public IRPS() {
-
-    }
 
 
     @Override
@@ -65,6 +65,15 @@ public class IRPS extends Fragment {
 
        myView = inflater.inflate(new_ystem,container,false);
         init();
+
+        MultilayerPerceptron bayes = null;
+        try {
+            bayes= (MultilayerPerceptron) weka.core.SerializationHelper.read(getActivity().getAssets().open("my.model"));
+             Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+            Log.d("Model333333333333333333","Loaded Successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,6 +93,8 @@ public class IRPS extends Fragment {
 
             }
         });
+
+
 
         return myView;
 

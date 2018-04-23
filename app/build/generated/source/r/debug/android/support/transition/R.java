@@ -98,15 +98,15 @@ public final class R {
         public static final int save_non_transition_alpha = 0x7f0a00b4;
         public static final int save_scale_type = 0x7f0a00b5;
         public static final int status_bar_latest_event_content = 0x7f0a00d9;
-        public static final int text = 0x7f0a00f3;
-        public static final int text2 = 0x7f0a00f4;
-        public static final int time = 0x7f0a00fa;
-        public static final int title = 0x7f0a00fb;
-        public static final int transition_current_scene = 0x7f0a0102;
-        public static final int transition_layout_save = 0x7f0a0103;
-        public static final int transition_position = 0x7f0a0104;
-        public static final int transition_scene_layoutid_cache = 0x7f0a0105;
-        public static final int transition_transform = 0x7f0a0106;
+        public static final int text = 0x7f0a00f4;
+        public static final int text2 = 0x7f0a00f5;
+        public static final int time = 0x7f0a00fb;
+        public static final int title = 0x7f0a00fc;
+        public static final int transition_current_scene = 0x7f0a0103;
+        public static final int transition_layout_save = 0x7f0a0104;
+        public static final int transition_position = 0x7f0a0105;
+        public static final int transition_scene_layoutid_cache = 0x7f0a0106;
+        public static final int transition_transform = 0x7f0a0107;
     }
     public static final class integer {
         public static final int cancel_button_image_alpha = 0x7f0b0004;
@@ -130,7 +130,7 @@ public final class R {
         public static final int notification_template_part_time = 0x7f0c0044;
     }
     public static final class string {
-        public static final int status_bar_notification_info_overflow = 0x7f0f0056;
+        public static final int status_bar_notification_info_overflow = 0x7f0f005e;
     }
     public static final class style {
         public static final int TextAppearance_Compat_Notification = 0x7f100103;
