@@ -23,11 +23,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.AttributedCharacterIterator;
 import java.util.Calendar;
+import java.util.concurrent.atomic.AtomicReference;
 
 
 import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.MultilayerPerceptron;
+import weka.core.Attribute;
 
 import static com.example.dell.icutrack.R.layout.new_ystem;
 
@@ -322,6 +325,20 @@ public class IRPS extends Fragment {
        // sAdmission=myView.findViewById(R.id.sAdmmission);
 
 
+
+    }
+
+    private String neuralModel()
+    {
+        final Attribute attributeBilirubin=new Attribute("BILUBIRIN_NV");
+        final  Attribute attributePlatelete=new Attribute("PLATELET_NV");
+        final  Attribute attributeGender=new Attribute("G");
+        final Attribute attributeLOS=new Attribute("LOS");
+        final Attribute attributePaO2=new Attribute("PAO2_NV");
+        final Attribute attributePh=new Attribute("PH_NV");
+        final Attribute attributeNa=new Attribute("NA_NV");
+        final Attribute attributeK=new Attribute("K_NV");
+        final Attribute attributeCreatinine=new Attribute("Creatinine_NV");
 
     }
 
