@@ -1,6 +1,7 @@
 package com.example.dell.icutrack;
 
 
+import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,8 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -42,6 +45,8 @@ public class Apache extends Fragment {
     String result;
     private Button bSave, bReset, bCalculate;
     TextView tResult;
+    private FirebaseAuth auth;
+    private  FirebaseUser currentUser;
 
 
     View view;
@@ -56,15 +61,48 @@ public class Apache extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(apache, container, false);
 
         init();
+        bCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                result1();
+                Log.e("Resulthhfdsjfjd", String.valueOf(result));
+
+                //Toast.makeText(getContext(), result, Toast.LENGTH_SHORT));
+                // tResult.setText("Outcome:  "+result.toString());
+
+
+            }
+        });
+
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dataSave();
+               // au if()
+                auth=FirebaseAuth.getInstance();
+
+                if(auth.getCurrentUser()!=null)
+                {
+                    Toast.makeText(getActivity(), "Method Has been called", Toast.LENGTH_SHORT).show();
+                   // dataSave();
+                }
+                else
+                {
+                    final AlertDialog.Builder mydialogue=new AlertDialog.Builder(getActivity());
+                    LayoutInflater inflater=getActivity().getLayoutInflater();
+                    View dialogue=inflater.inflate(R.layout.signinalertdialogue,null);
+                    mydialogue.setView(dialogue);
+                    mydialogue.setTitle("Change Language");
+                    mydialogue.create();
+                    mydialogue.show();
+
+                }
+
             }
         });
 
@@ -874,41 +912,7 @@ public class Apache extends Fragment {
 
 
         // COMA
-/*
 
-        List<String> ageList = Arrays.asList(getResources().getStringArray(R.array.Age_Array));
-        adapterAge=new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,ageList){
-            @Override
-            public boolean isEnabled(int position){
-                if(position == 0)
-                {
-                    // Disable the first item from Spinner
-                    // First item will be use for hint
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-            @Override
-            public View getDropDownView(int position, View convertView,
-                                        ViewGroup parent) {
-                View view = super.getDropDownView(position, convertView, parent);
-                TextView tv = (TextView) view;
-                if(position == 0){
-                    // Set the hint text color gray
-                    tv.setTextColor(Color.GRAY);
-                }
-                else {
-                    tv.setTextColor(Color.BLACK);
-                }
-                return view;
-            }
-
-        };
-        adapterAge.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        sAage.setAdapter(adapterAge);*/
 
         // Critical
 
@@ -1045,19 +1049,7 @@ public class Apache extends Fragment {
         }
 
         // summation=summation+mAge;
-        bCalculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                result1();
-                Log.e("Resulthhfdsjfjd", String.valueOf(result));
-
-                //Toast.makeText(getContext(), result, Toast.LENGTH_SHORT));
-                // tResult.setText("Outcome:  "+result.toString());
-
-
-            }
-        });
     }
 
     private  void dataSave(){

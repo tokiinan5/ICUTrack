@@ -24,14 +24,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.AttributedCharacterIterator;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.concurrent.atomic.AtomicReference;
 
 
 import weka.classifiers.bayes.NaiveBayes;
+import weka.classifiers.functions.Logistic;
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.core.Attribute;
+import weka.core.DenseInstance;
+import weka.core.Instances;
 
+import static com.example.dell.icutrack.R.layout.abc_action_bar_view_list_nav_layout;
 import static com.example.dell.icutrack.R.layout.new_ystem;
 
 /**
@@ -45,6 +50,7 @@ public class IRPS extends Fragment {
     private  String pGender;
     String error="Can not be empty";
     Context context;
+    Logistic bayes = null;
 
 
 
@@ -69,13 +75,14 @@ public class IRPS extends Fragment {
        myView = inflater.inflate(new_ystem,container,false);
         init();
 
-        MultilayerPerceptron bayes = null;
+
         try {
-            bayes= (MultilayerPerceptron) weka.core.SerializationHelper.read(getActivity().getAssets().open("my.model"));
-             Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
-            Log.d("Model333333333333333333","Loaded Successfully");
+         //   bayes= (Logistic) weka.core.SerializationHelper.read(getActivity().getAssets().open("multi.model"));
+           //  Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+            Log.e("Model333333333333333333","Loaded Successfully");
         } catch (Exception e) {
             e.printStackTrace();
+            Log.e("MODEL",e.toString());
         }
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +101,13 @@ public class IRPS extends Fragment {
                 Intent intent=new Intent(getActivity(),SavedData.class);
                 startActivity(intent);
 
+            }
+        });
+        bCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               neuralModel();
+               // Toast.makeText(context, dataa, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -152,184 +166,190 @@ public class IRPS extends Fragment {
 */
 
 
-       if(TextUtils.isEmpty(eAge.getText().toString()))
-            {
-               eAge.setError(error);  // bangla lagbe
-                eAge.requestFocus();
-            }
 
-            else
+    }
+    private void initvalues()
+    {
+        if(TextUtils.isEmpty(eAge.getText().toString()))
+        {
+            eAge.setError(error);  // bangla lagbe
+            eAge.requestFocus();
+        }
+
+        else
         {
             pAge= Double.parseDouble(String.valueOf(eAge.getText()));
         }
 
         // for Temp
 
-       if(TextUtils.isEmpty(eTemp.getText().toString()))
-       {
-           eTemp.setError(error);  // bangla lagbe
-           eTemp.requestFocus();
-       }
-
-       else
-       {
-           pTemp= Double.parseDouble(String.valueOf(eTemp.getText()));
-       }
+      try {
+          pTemp= Double.parseDouble(eTemp.getText().toString());
+      }
+      catch (Exception e)
+      {
+          Log.e("SOMOSSAAAA","BAAAAAAL");
+      }
 
 
-       if(TextUtils.isEmpty(eBillirubin.getText().toString()))
-       {
-           eBillirubin.setError(error);  // bangla lagbe
-           eBillirubin.requestFocus();
-       }
-
-       else
-       {
-           pBillirubin= Double.parseDouble(String.valueOf(eBillirubin.getText()));
-       }
-
-       //
 
 
-       if(TextUtils.isEmpty(ePlatelate.getText().toString()))
-       {
-           ePlatelate.setError(error);  // bangla lagbe
-           ePlatelate.requestFocus();
-       }
 
-       else
-       {
-           pPlatelate= Double.parseDouble(String.valueOf(ePlatelate.getText()));
-       }
+        if(TextUtils.isEmpty(eBillirubin.getText().toString()))
+        {
+            eBillirubin.setError(error);  // bangla lagbe
+            eBillirubin.requestFocus();
+        }
 
-       if(TextUtils.isEmpty(eLos.getText().toString()))
-       {
-           eLos.setError(error);  // bangla lagbe
-           eLos.requestFocus();
-       }
+        else
+        {
+            pBillirubin= Double.parseDouble(String.valueOf(eBillirubin.getText()));
+        }
 
-       else
-       {
-           pLos= Double.parseDouble(String.valueOf(eLos.getText()));
-       }
-       //
+        //
 
 
-       if(TextUtils.isEmpty(ePaO2.getText().toString()))
-       {
-           ePaO2.setError(error);  // bangla lagbe
-           ePaO2.requestFocus();
-       }
+        if(TextUtils.isEmpty(ePlatelate.getText().toString()))
+        {
+            ePlatelate.setError(error);  // bangla lagbe
+            ePlatelate.requestFocus();
+        }
 
-       else
-       {
-           pPaO2= Double.parseDouble(String.valueOf(ePaO2.getText()));
-       }
+        else
+        {
+            pPlatelate= Double.parseDouble(String.valueOf(ePlatelate.getText()));
+        }
 
-       ///
+        if(TextUtils.isEmpty(eLos.getText().toString()))
+        {
+            eLos.setError(error);  // bangla lagbe
+            eLos.requestFocus();
+        }
 
-       if(TextUtils.isEmpty(eSodium.getText().toString()))
-       {
-           eSodium.setError(error);  // bangla lagbe
-           eSodium.requestFocus();
-       }
-
-       else
-       {
-           pSodium= Double.parseDouble(String.valueOf(eSodium.getText()));
-       }
-
-       //
+        else
+        {
+            pLos= Double.parseDouble(String.valueOf(eLos.getText()));
+        }
+        //
 
 
-       if(TextUtils.isEmpty(ePotassium.getText().toString()))
-       {
-           ePotassium.setError(error);  // bangla lagbe
-           ePotassium.requestFocus();
-       }
+        if(TextUtils.isEmpty(ePaO2.getText().toString()))
+        {
+            ePaO2.setError(error);  // bangla lagbe
+            ePaO2.requestFocus();
+        }
 
-       else
-       {
-           pAge= Double.parseDouble(String.valueOf(ePotassium.getText()));
-       }
+        else
+        {
+            pPaO2= Double.parseDouble(String.valueOf(ePaO2.getText()));
+        }
+
+        ///
+
+        if(TextUtils.isEmpty(eSodium.getText().toString()))
+        {
+            eSodium.setError(error);  // bangla lagbe
+            eSodium.requestFocus();
+        }
+
+        else
+        {
+            pSodium= Double.parseDouble(String.valueOf(eSodium.getText()));
+        }
+
+        //
+
+
+        if(TextUtils.isEmpty(ePotassium.getText().toString()))
+        {
+            ePotassium.setError(error);  // bangla lagbe
+            ePotassium.requestFocus();
+        }
+
+        else
+        {
+            pAge= Double.parseDouble(String.valueOf(ePotassium.getText()));
+        }
 //
 
 
-       if(TextUtils.isEmpty(eCreatinine.getText().toString()))
-       {
-           eCreatinine.setError(error);  // bangla lagbe
-           eCreatinine.requestFocus();
-       }
+        if(TextUtils.isEmpty(eCreatinine.getText().toString()))
+        {
+            eCreatinine.setError(error);  // bangla lagbe
+            eCreatinine.requestFocus();
+        }
 
-       else
-       {
-           pCreatinine= Double.parseDouble(String.valueOf(eCreatinine.getText()));
-       }
+        else
+        {
+            pCreatinine= Double.parseDouble(String.valueOf(eCreatinine.getText()));
+        }
 //
 
-       if(TextUtils.isEmpty(eWbc.getText().toString()))
-       {
-           eWbc.setError(error);  // bangla lagbe
-           eWbc.requestFocus();
-       }
+        if(TextUtils.isEmpty(eWbc.getText().toString()))
+        {
+            eWbc.setError(error);  // bangla lagbe
+            eWbc.requestFocus();
+        }
 
-       else
-       {
-           pWbc= Double.parseDouble(String.valueOf(eWbc.getText()));
-       }
+        else
+        {
+            pWbc= Double.parseDouble(String.valueOf(eWbc.getText()));
+        }
 
-       //
-       if(TextUtils.isEmpty(ePh.getText().toString()))
-       {
-           ePh.setError(error);  // bangla lagbe
-           ePh.requestFocus();
-       }
+        //
+        if(TextUtils.isEmpty(ePh.getText().toString()))
+        {
+            ePh.setError(error);  // bangla lagbe
+            ePh.requestFocus();
+        }
 
-       else
-       {
-           pPh= Double.parseDouble(String.valueOf(ePh.getText()));
-       }
+        else
+        {
+            pPh= Double.parseDouble(String.valueOf(ePh.getText()));
+        }
 
 
 
-       if(TextUtils.isEmpty(eHematocrit.getText().toString()))
-       {
-           eHematocrit.setError(error);  // bangla lagbe
-           eHematocrit.requestFocus();
-       }
+        if(TextUtils.isEmpty(eHematocrit.getText().toString()))
+        {
+            eHematocrit.setError(error);  // bangla lagbe
+            eHematocrit.requestFocus();
+        }
 
-       else
-       {
-           pHematocrit= Double.parseDouble(String.valueOf(eHematocrit.getText()));
-       }
+        else
+        {
+            pHematocrit= Double.parseDouble(String.valueOf(eHematocrit.getText()));
+        }
 //
-       if(!(rFemale.isChecked()) || !(rMale.isChecked()) )
-       {
-           rMale.setError(error);
-           rFemale.setError(error);
-       }
+        if(!(rFemale.isChecked()) || !(rMale.isChecked()) )
+        {
+            rMale.setError(error);
+            rFemale.setError(error);
+        }
 
-       else
-       {
-           if(rFemale.isChecked())
-           {
-               pGender="F";
-           }
-           else
-               pGender="M";
-           Toast.makeText(getContext(), pGender.toString(), Toast.LENGTH_SHORT).show();
-       }
+        else
+        {
+            if(rFemale.isChecked())
+            {
+                pGender="F";
+            }
+            else
+                pGender="M";
+            Toast.makeText(getContext(), pGender.toString(), Toast.LENGTH_SHORT).show();
+        }
 
 
 
-       // sAdmission=myView.findViewById(R.id.sAdmmission);
+        // sAdmission=myView.findViewById(R.id.sAdmmission);
 
 
 
     }
 
-    private String neuralModel()
+    private void neuralModel()
     {
+
+        initvalues();
         final Attribute attributeBilirubin=new Attribute("BILUBIRIN_NV");
         final  Attribute attributePlatelete=new Attribute("PLATELET_NV");
         final  Attribute attributeGender=new Attribute("G");
@@ -338,7 +358,69 @@ public class IRPS extends Fragment {
         final Attribute attributePh=new Attribute("PH_NV");
         final Attribute attributeNa=new Attribute("NA_NV");
         final Attribute attributeK=new Attribute("K_NV");
-        final Attribute attributeCreatinine=new Attribute("Creatinine_NV");
+        final Attribute attributeCreatinine=new Attribute("CREATININE_NV");
+        final Attribute attributetemp=new Attribute("TMP_NV");
+        final Attribute attributeWbc=new Attribute("WHITEBLOODCELL");
+        final Attribute attributeHematocrit=new Attribute("HEMAROCRIT_NV");
+        final Attribute attributeAge=new Attribute("AGE_NV");
+        final ArrayList<String> classes=new ArrayList();
+        classes.add("Y");
+        classes.add("N");
+        ArrayList <Attribute> attributeList=new ArrayList<>();
+        Attribute classAtrribute=new Attribute("I",classes);
+        attributeList.add(attributeAge);
+        attributeList.add(attributeBilirubin);
+        attributeList.add(attributeCreatinine);
+        attributeList.add(attributeGender);
+        attributeList.add(attributeHematocrit);
+        attributeList.add(attributeK);
+        attributeList.add(attributeLOS);
+        attributeList.add(attributeNa);
+        attributeList.add(attributePaO2);
+        attributeList.add(attributePh);
+        attributeList.add(attributePlatelete);
+        attributeList.add(attributetemp);
+        attributeList.add(attributeWbc);
+        attributeList.add(classAtrribute);
+
+        Instances dataUnpredicted = new Instances("TestInstances",
+                attributeList, 1);
+
+        dataUnpredicted.setClassIndex(dataUnpredicted.numAttributes()-1);
+        DenseInstance instance=new DenseInstance(dataUnpredicted.numAttributes());
+        instance.setValue(attributeAge,pAge);
+        instance.setValue(attributeBilirubin,pBillirubin);
+        instance.setValue(attributeCreatinine,pCreatinine);
+      //  instance.setValue(attributeGender,"F");
+        instance.setValue(attributeHematocrit,pHematocrit);
+        instance.setValue(attributeK,pPotassium);
+        instance.setValue(attributeLOS,pLos);
+        instance.setValue(attributeNa,pSodium);
+        instance.setValue(attributePaO2,pPaO2);
+        instance.setValue(attributePh,pPh);
+        instance.setValue(attributePlatelete,pPlatelate);
+        instance.setValue(attributetemp,pTemp);
+        instance.setValue(attributeWbc,pWbc);
+     //   Toast.makeText(context, String.valueOf(pTemp), Toast.LENGTH_SHORT).show();
+
+        DenseInstance newInstance = instance;
+        // reference to dataset
+        String output=null;
+        newInstance.setDataset(dataUnpredicted);
+
+        try {
+            Double result=bayes.classifyInstance(instance);
+            output=classes.get(new Double(result).intValue());
+            Log.e("OUTPUT DROM MUL",output.toString());
+            Toast.makeText(getContext(), output, Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Log.e("error",e.getMessage());
+        }
+        //return output;
+
+
+
+
 
     }
 

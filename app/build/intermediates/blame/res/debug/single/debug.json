@@ -356,6 +356,10 @@
         "source": "C:\\Users\\Toki\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\7fad31ecdb54c1979323e66589446924\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
+        "merged": "G:\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\layout_signinalertdialogue.xml.flat",
+        "source": "G:\\ICUTrack\\app\\src\\main\\res\\layout\\signinalertdialogue.xml"
+    },
+    {
         "merged": "G:\\ICUTrack\\app\\build\\intermediates\\res\\merged\\debug\\drawable_user.png.flat",
         "source": "G:\\ICUTrack\\app\\src\\main\\res\\drawable\\user.png"
     },
