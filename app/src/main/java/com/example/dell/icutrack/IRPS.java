@@ -77,7 +77,7 @@ public class IRPS extends Fragment {
 
 
         try {
-         //   bayes= (Logistic) weka.core.SerializationHelper.read(getActivity().getAssets().open("multi.model"));
+            bayes= (Logistic) weka.core.SerializationHelper.read(getActivity().getAssets().open("logic.model"));
            //  Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
             Log.e("Model333333333333333333","Loaded Successfully");
         } catch (Exception e) {
