@@ -27,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 import static com.example.dell.icutrack.R.layout.apache;
@@ -42,7 +43,7 @@ public class Apache extends Fragment {
     private int mTemp, mBp, mHeart, mRespiratory, mPaO2, mPh, mSodium, mPotassium, mCreatinine, mAge,
             mHematocrit, mWBc, mComa, mCritical, summ;
     private EditText eComa;
-    String result;
+    String result,pCritical;
     private Button bSave, bReset, bCalculate;
     TextView tResult;
     private FirebaseAuth auth;
@@ -73,10 +74,6 @@ public class Apache extends Fragment {
                 result1();
                 Log.e("Resulthhfdsjfjd", String.valueOf(result));
 
-                //Toast.makeText(getContext(), result, Toast.LENGTH_SHORT));
-                // tResult.setText("Outcome:  "+result.toString());
-
-
             }
         });
 
@@ -84,12 +81,13 @@ public class Apache extends Fragment {
             @Override
             public void onClick(View view) {
                // au if()
-                auth=FirebaseAuth.getInstance();
+                dataSave();
+/*                auth=FirebaseAuth.getInstance();
 
                 if(auth.getCurrentUser()!=null)
                 {
                     Toast.makeText(getActivity(), "Method Has been called", Toast.LENGTH_SHORT).show();
-                   // dataSave();
+                    dataSave();
                 }
                 else
                 {
@@ -101,7 +99,7 @@ public class Apache extends Fragment {
                     mydialogue.create();
                     mydialogue.show();
 
-                }
+                }*/
 
             }
         });
@@ -917,7 +915,7 @@ public class Apache extends Fragment {
         // Critical
 
 
-        List<String> criticalList = Arrays.asList(getResources().getStringArray(R.array.Critical_Array));
+        final List<String> criticalList = Arrays.asList(getResources().getStringArray(R.array.Critical_Array));
         adapterCritical = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, criticalList) {
             @Override
             public boolean isEnabled(int position) {
@@ -950,6 +948,7 @@ public class Apache extends Fragment {
         sCritical.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                pCritical=criticalList.get(i).toString();
                 switch (i) {
                     case 1:
                         mCritical = 0;
@@ -1055,9 +1054,28 @@ public class Apache extends Fragment {
     private  void dataSave(){
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
         ApacheFeatures features=new ApacheFeatures();
-        features.setAge(45);
-        features.setBloodPressure(1000);
-        reference.child("IPRS").child("Val").setValue(features);
+        Calendar calendar=Calendar.getInstance();
+        String date=calendar.get(Calendar.HOUR_OF_DAY)+ ":"+calendar.get(Calendar.MINUTE)+":" +calendar.get(Calendar.SECOND);
+        features.setAge(mAge);
+        features.setBloodPressure(mBp);
+        features.setComa(mComa);
+        features.setCreatinine(mCreatinine);
+        features.setHeartRate(mHeart);
+        features.setCriticalDesease(pCritical);
+        features.setHematocrit(mHematocrit);
+        features.setDate(date);
+        features.setPaO2(mPaO2);
+        features.setPh(mPh);
+        features.setPotassium(mPotassium);
+        features.setSodium(mSodium);
+        features.setTemperature(mTemp);
+        features.setRespiratoryRate(mRespiratory);
+        features.setWBc(mWBc);
+
+
+      //  features.setAge(45);
+        //features.setBloodPressure(1000);
+        reference.child("tokiinan5com").child("Apache").child(features.getDate().toString()).setValue(features);
     }
 
 

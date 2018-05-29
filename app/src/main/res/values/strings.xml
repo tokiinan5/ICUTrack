@@ -13,7 +13,7 @@
     <string name="welcome">Intro slider example by Tutorialwing.com</string>
     <string name="slide1_desc">A platform where you will get free study materials from beginning to advance levels...</string>
     <string name="slide1_title">Welcome to Tutorialwing.com</string>
-    <string name="slide2_desc">Learn to develop mobile applications using popular programming languages like android, ios etc.</string>
+    <string name="slide2_desc">This is an application to help people in predicting ICU readmission. Please go through the tutorial</string>
     <string name="slide2_title">Develop mobile applications</string>
     <string name="slide3_desc">Learn to develop web applications using popular programming languages like javascript, html, css, angular etc.</string>
     <string name="slide3_title">Develop web applications</string>
@@ -272,4 +272,145 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_saved_data">SavedData</string>
     <string name="start">STarted</string>
+
+
+    <string-array name="Saps_Age">
+    <item>Select Here</item>
+    <item> less than 40 </item>
+        <item> 40-59 </item>
+    <item>60-69 </item>
+    <item>70-74</item>
+    <item>75-79</item>
+    <item>greater than 80 </item>
+
+    </string-array>
+    <string-array name="Saps_Heart">
+        <item>Select Here</item>
+        <item> less than 40</item>
+        <item>40-69 </item>
+        <item>70-119</item>
+        <item>120-159</item>
+        <item>greater than 160 </item>
+
+    </string-array>
+
+
+    <string-array name="Saps_Bp">
+    <item>Select Here</item>
+    <item> less than 70</item>
+    <item>70-69 </item>
+    <item>100-199</item>
+    <item>75-79</item>
+    <item>greater than 200 </item>
+    </string-array>
+
+
+
+    <string-array name="Saps_Urine">
+        <item>Select Here</item>
+        <item> less than 500 </item>
+        <item>500-999 </item>
+        <item>100-199</item>
+        <item>greater than 1000 </item>
+    </string-array>
+
+
+
+    <string-array name="Saps_Sodium">
+        <item>Select Here</item>
+        <item> less than 125</item>
+        <item>125-144 </item>
+
+        <item>greater than 145 </item>
+    </string-array>
+
+    <string-array name="Saps_Potassium">
+        <item>Select Here</item>
+        <item> less than 3.0</item>
+        <item>3.0-4.9 </item>
+
+        <item>greater than 5.0 </item>
+    </string-array>
+
+
+
+    <string-array name="Saps_Temp">
+        <item>Select Here</item>
+        <item> less than 102.2 </item>
+
+        <item>greater than 102.2 </item>
+    </string-array>
+
+    <string-array name="Saps_GCS">
+        <item>Select Here</item>
+        <item> 14-15</item>
+        <item>11-13 </item>
+        <item>6-8</item>
+
+        <item>less than 6</item>
+    </string-array>
+
+    <string-array name="Saps_PaO2">
+        <item>Select Here</item>
+        <item> less than 100</item>
+        <item>100-199 </item>
+
+        <item>greater than 200 </item>
+    </string-array>
+
+
+
+    <string-array name="Saps_BUN">
+        <item>Select Here</item>
+        <item> less than 28</item>
+        <item>28-83 </item>
+        <item>greater than 84 </item>
+    </string-array>
+
+    <string-array name="Saps_BiCarbonate">
+        <item>Select Here</item>
+        <item> less than 15</item>
+        <item>15-19 </item>
+        <item>greater than 20 </item>
+    </string-array>
+
+    <string-array name="Saps_Bilirubin">
+        <item>Select Here</item>
+        <item> less than 4.0</item>
+        <item>4.0-5.9 </item>
+        <item>greater than 6.0 </item>
+    </string-array>
+
+    <string-array name="Saps_WBC">
+        <item>Select Here</item>
+        <item> less than 1</item>
+        <item>1.00-19.9 </item>
+
+        <item>greater than 20.0 </item>
+    </string-array>
+
+
+    <string-array name="Saps_Chronic">
+        <item>Select Here</item>
+        <item> None</item>
+        <item>Cancer </item>
+        <item>Hematologic malignancy</item>
+        <item>Aids</item>
+
+    </string-array>
+
+
+    <string-array name="Saps_Admissions">
+        <item>Select Here</item>
+        <item>Surgery</item>
+        <item>Medical </item>
+        <item>Unscheduled Surgery</item>
+
+
+    </string-array>
+    <string name="text_Urine">Urine Output</string>
+    <string name="text_Bicarbonate">Bicarbonate</string>
+
+
+    
 </resources>

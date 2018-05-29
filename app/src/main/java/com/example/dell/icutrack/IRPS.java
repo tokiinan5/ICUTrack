@@ -51,13 +51,6 @@ public class IRPS extends Fragment {
     String error="Can not be empty";
     Context context;
     Logistic bayes = null;
-
-
-
-
-
-
-
     View myView;
     Button bSave,bReset,bCalculate;
 

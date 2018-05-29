@@ -2,31 +2,34 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_screen1">
+    android:background="#c8196fd9">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="84dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="@dimen/img_width_height"
-            android:layout_height="@dimen/img_width_height"
-            android:src="@drawable/ic_menu_gallery"/>
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/start" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:gravity="center"
             android:paddingLeft="@dimen/desc_padding"
             android:paddingRight="@dimen/desc_padding"
             android:text="@string/slide2_desc"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/slide_desc"/>
+            android:textColor="#000"
+            android:textSize="@dimen/slide_desc" />
 
     </LinearLayout>
 
@@ -34,23 +37,22 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/slide2_title"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:padding="10dp"
+        android:text="Welcome"
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/slide_title"
-        android:textStyle="bold"
-        android:padding="10dp"
-        android:layout_alignParentTop="true" />
+        android:textSize="40dp"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:text="@string/get_started"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="106dp"
+        android:text="@string/get_started" />
 
 </RelativeLayout>
