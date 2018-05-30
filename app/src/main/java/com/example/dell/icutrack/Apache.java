@@ -72,7 +72,7 @@ public class Apache extends Fragment {
             public void onClick(View view) {
 
                 result1();
-                Log.e("Resulthhfdsjfjd", String.valueOf(result));
+                tResult.setText(result);
 
             }
         });
@@ -1071,6 +1071,7 @@ public class Apache extends Fragment {
         features.setTemperature(mTemp);
         features.setRespiratoryRate(mRespiratory);
         features.setWBc(mWBc);
+        features.setResult(result);
 
 
       //  features.setAge(45);

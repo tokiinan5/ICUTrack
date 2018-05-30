@@ -108,4 +108,23 @@ public class Features {
     }
 
     private  String pGender;
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    private String date;
+    private String result;
 }

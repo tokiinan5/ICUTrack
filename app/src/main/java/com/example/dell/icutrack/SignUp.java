@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +25,7 @@ public class SignUp extends AppCompatActivity {
     EditText pMail,pPassword,pConpassword;
     //Button  bSignup;
     Button bSignup;
+    TextView tNew;
     FirebaseAuth auth;
     String email,password,confirmPassword;
 
@@ -37,9 +39,10 @@ public class SignUp extends AppCompatActivity {
         pPassword=findViewById(R.id.epassword);
         pConpassword=findViewById(R.id.eCpassword);
         bSignup=findViewById(R.id.bSign);
+        tNew=findViewById(R.id.tNew);
         auth=FirebaseAuth.getInstance();
-        Intent intent=new Intent(SignUp.this,WorkingActivity.class);
-        startActivity(intent);
+    /*    Intent intent=new Intent(SignUp.this,WorkingActivity.class);
+        startActivity(intent);*/
         bSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,38 +59,48 @@ public class SignUp extends AppCompatActivity {
                     auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            Toast.makeText(SignUp.this, "New User Created", Toast.LENGTH_SHORT).show();
+                            if(task.isSuccessful())
+                            {
+
+                                Toast.makeText(SignUp.this, "New User Created", Toast.LENGTH_SHORT).show();
+                                final FirebaseUser user = auth.getCurrentUser();
+                                user.sendEmailVerification()
+                                        .addOnCompleteListener(new OnCompleteListener() {
+                                            @Override
+                                            public void onComplete(@NonNull Task task) {
+                                                // Re-enable button
+                                                // findViewById(R.id.verify_email_button).setEnabled(true);
+
+                                                if (task.isSuccessful()) {
+                                                    Toast.makeText(getApplicationContext(),
+                                                            "Verification email sent to " + user.getEmail(),
+                                                            Toast.LENGTH_SHORT).show();
+                                                } else {
+                                                    Log.e("FD", "sendEmailVerification", task.getException());
+                                                    Toast.makeText(getApplicationContext(),
+                                                            "Failed to send verification email.",
+                                                            Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        });
+                            }
 
                         }
                     });
                 }
 
-                final FirebaseUser user = auth.getCurrentUser();
-                user.sendEmailVerification()
-                        .addOnCompleteListener(new OnCompleteListener() {
-                            @Override
-                            public void onComplete(@NonNull Task task) {
-                                // Re-enable button
-                               // findViewById(R.id.verify_email_button).setEnabled(true);
 
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(),
-                                            "Verification email sent to " + user.getEmail(),
-                                            Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Log.e("FD", "sendEmailVerification", task.getException());
-                                    Toast.makeText(getApplicationContext(),
-                                            "Failed to send verification email.",
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
 
-                Intent intent=new Intent(SignUp.this,WorkingActivity.class);
-                startActivity(intent);
+               /* Intent intent=new Intent(SignUp.this,WorkingActivity.class);
+                startActivity(intent);*/
             }
         });
+
+
     }
+
+
+
 
 
 

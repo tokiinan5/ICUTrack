@@ -1,7 +1,9 @@
 package com.example.dell.icutrack;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -26,42 +28,64 @@ import java.util.concurrent.TimeoutException;
 
 public class SignIn extends AppCompatActivity {
     Button mSignin;
-    TextView tEmail, tPassword;
+    TextView tEmail, tPassword,tNew;
     String  email,password;
     FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+       // int defaultValue = getResources().getInteger(R.integer.saved_high_score_default_key);
+        int status = sharedPref.getInt("SIGN_IN_STATUS",100);
+        if(status==1)
+        {
+            Intent intent=new Intent(this,WorkingActivity.class);
+            startActivity(intent);
+        }
         setContentView(R.layout.activity_sign_in);
         mSignin=findViewById(R.id.bSignin);
         tPassword=findViewById(R.id.epassword);
         tEmail=findViewById(R.id.eUserName);
         auth=FirebaseAuth.getInstance();
+        tNew=findViewById(R.id.tNew);
+        tNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SignIn.this,SignUp.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         mSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignIn.this, SignUp.class);
-                startActivity(intent);
-/*                email=tEmail.getText().toString();
+         Intent intent=new Intent(getApplicationContext(),WorkingActivity.class);
+         startActivity(intent);
                 password=tPassword.getText().toString();
+                email=tEmail.getText().toString();
                 auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful())
                         {
+
                             FirebaseUser user=auth.getCurrentUser();
                             if(user.isEmailVerified()) {
                                 Toast.makeText(SignIn.this, R.string.msg_Sign_IN, Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(SignIn.this, SignUp.class);
+                                Intent intent = new Intent(SignIn.this, WorkingActivity.class);
+                                SharedPreferences sharedPref = getPreferences(MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                editor.putInt("SIGN_IN_STATUS",1);
+                                editor.commit();
                                 startActivity(intent);
                             }
                             else
                             {
 
-                                Toast.makeText(SignIn.this, "Verify", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignIn.this, "Please Go to your email id and verify ", Toast.LENGTH_SHORT).show();
                             }
                         }
                         else {
@@ -85,7 +109,7 @@ public class SignIn extends AppCompatActivity {
                         }
 
                     }
-                });*/
+                });
 
                // auth.signInWithCredential(new Cre)
 

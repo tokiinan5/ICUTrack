@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 import static com.example.dell.icutrack.R.layout.apache;
@@ -36,9 +37,9 @@ public class Saps extends Fragment {
     private Spinner sTemp, sBp, sHeart, sUrine, sPaO2, sBUN, sSodium, sPotassium, sBicarbonate, sAage,
             sBilirubin, sWBc, sComa, sCritical,sAdmissiom;
     private int mTemp, mBp, mHeart, mUrine, mPaO2, mBUN, mSodium, mPotassium, mBicarbonate, mAge,
-            mBilirubin, mWBc, mComa, mCritical,mAdmission,summ;
+    mBilirubin, mWBc, mComa, mCritical,mAdmission,summ;
     private EditText eComa;
-    String result;
+    String result,date;
     private Button bSave, bReset, bCalculate;
     TextView tResult;
     private FirebaseAuth auth;
@@ -68,10 +69,10 @@ public class Saps extends Fragment {
             public void onClick(View view) {
 
                 result1();
-                Log.e("Resulthhfdsjfjd", String.valueOf(result));
+               // Log.e("Resulthhfdsjfjd", String.valueOf(result));
 
                 //Toast.makeText(getContext(), result, Toast.LENGTH_SHORT));
-                tResult.setText("Outcome:  "+String.valueOf(mortality));
+                tResult.setText("Outcome : Mortality Probalitity is "+String.valueOf(mortality));
 
 
             }
@@ -85,18 +86,11 @@ public class Saps extends Fragment {
 
                 if(auth.getCurrentUser()!=null)
                 {
-                    Toast.makeText(getActivity(), "Method Has been called", Toast.LENGTH_SHORT).show();
-                    // dataSave();
+                  //  Toast.makeText(getActivity(), "Method Has been called", Toast.LENGTH_SHORT).show();
+                    dataSave();
                 }
                 else
                 {
-                    final AlertDialog.Builder mydialogue=new AlertDialog.Builder(getActivity());
-                    LayoutInflater inflater=getActivity().getLayoutInflater();
-                    View dialogue=inflater.inflate(R.layout.signinalertdialogue,null);
-                    mydialogue.setView(dialogue);
-                    mydialogue.setTitle("Change Language");
-                    mydialogue.create();
-                    mydialogue.show();
 
                 }
 
@@ -681,7 +675,7 @@ public class Saps extends Fragment {
                         mBicarbonate = 0;
 
                 }
-                // summation=summation+mCreatinine;
+                 summ=summ+mBicarbonate;
 
             }
 
@@ -1014,10 +1008,29 @@ public class Saps extends Fragment {
 
     private  void dataSave(){
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
-        ApacheFeatures features=new ApacheFeatures();
-        features.setAge(45);
-        features.setBloodPressure(1000);
-        reference.child("IPRS").child("Val").setValue(features);
+        SapsFeatures features=new SapsFeatures();
+        Calendar calendar=Calendar.getInstance();
+        String date=calendar.get(Calendar.HOUR_OF_DAY)+ ":"+calendar.get(Calendar.MINUTE)+":" +calendar.get(Calendar.SECOND);
+        features.setmTemp(mTemp);
+        features.setmComa(mComa);
+        features.setmAge(mAge);
+        features.setmAdmission(mAdmission);
+        features.setmBicarbonate(mBicarbonate);
+        features.setmBilirubin(mBilirubin);
+        features.setmBp(mBp);
+        features.setmBUN(mBUN);
+        features.setmCritical(mCritical);
+        features.setmHeart(mHeart);
+        features.setmPaO2(mPaO2);
+        features.setmSodium(mSodium);
+        features.setmWBc(mWBc);
+        features.setmPotassium(mPotassium);
+        features.setmUrine(mUrine);
+        features.setDate(date);
+        features.setResult(result);
+        features.setResult(result);
+
+        reference.child("tokiinan5com").child("Saps").child(features.getDate().toString()).setValue(features);
     }
 
 

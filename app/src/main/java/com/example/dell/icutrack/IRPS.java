@@ -1,7 +1,9 @@
 package com.example.dell.icutrack;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -52,6 +54,7 @@ public class IRPS extends Fragment {
     Context context;
     Logistic bayes = null;
     View myView;
+    String output=null;
     Button bSave,bReset,bCalculate;
 
    public  IRPS()
@@ -80,10 +83,8 @@ public class IRPS extends Fragment {
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Calendar calendar=Calendar.getInstance();
-                int sec=calendar.get(Calendar.MINUTE);
-                Toast.makeText(getContext(), String.valueOf(sec), Toast.LENGTH_SHORT).show();
-
+             // log in check
+             dataSave();
             }
         });
 
@@ -100,6 +101,33 @@ public class IRPS extends Fragment {
             @Override
             public void onClick(View view) {
                neuralModel();
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+                alertDialogBuilder.setTitle(" Is there any probability of Readmission?");
+                String result=null;
+                if(output.equals("Y"))
+                {
+                    result="Yes";
+                }
+                else
+                {
+                    result="No";
+                }
+                alertDialogBuilder.setMessage("Are you sure, You wanted to make decision");
+
+
+                alertDialogBuilder.setNegativeButton("Ok",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getActivity().finish();
+                    }
+                });
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+
+
+
                // Toast.makeText(context, dataa, Toast.LENGTH_SHORT).show();
             }
         });
@@ -109,7 +137,12 @@ public class IRPS extends Fragment {
         return myView;
 
     }
-    private  void decision(){
+    private  void dataSave(){
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+       // IRPSdataFormat features=new IRPSdataFormat();
+
+        Calendar calendar=Calendar.getInstance();
+        String date=calendar.get(Calendar.HOUR_OF_DAY)+ ":"+calendar.get(Calendar.MINUTE)+":" +calendar.get(Calendar.SECOND);
         Features features=new Features();
         features.setpAge(pAge);
         features.setpBillirubin(pBillirubin);
@@ -124,6 +157,10 @@ public class IRPS extends Fragment {
         features.setpSodium(pSodium);
         features.setpWbc(pWbc);
         features.setpTemp(pTemp);
+        features.setDate(date);
+        features.setResult(output);
+
+        reference.child("tokiinan5com").child("IRPS").child(features.getDate().toString()).setValue(features);
 
     }
 
@@ -398,23 +435,18 @@ public class IRPS extends Fragment {
 
         DenseInstance newInstance = instance;
         // reference to dataset
-        String output=null;
+
         newInstance.setDataset(dataUnpredicted);
 
         try {
             Double result=bayes.classifyInstance(instance);
             output=classes.get(new Double(result).intValue());
             Log.e("OUTPUT DROM MUL",output.toString());
-            Toast.makeText(getContext(), output, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(), output, Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Log.e("error",e.getMessage());
         }
-        //return output;
+        //return output;    }
 
-
-
-
-
-    }
-
+}
 }

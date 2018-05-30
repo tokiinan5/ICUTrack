@@ -27,7 +27,10 @@
         <activity
             android:name=".SavedData"
             android:label="@string/title_activity_saved_data"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ApacheData" />
+        <activity android:name=".Showdata" />
+        <activity android:name=".IRPSData"></activity>
     </application>
 
 </manifest>

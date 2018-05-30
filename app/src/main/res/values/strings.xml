@@ -123,10 +123,10 @@
 
         <item>40-54</item>
         <item>less than or eq 49 </item>
-        
+
 
     </string-array>
-    
+
     <string-array name="Respiratory_Array">
         <item>Select Here</item>
         <item>>=50</item>
@@ -138,8 +138,8 @@
         <item>6-9</item>
         <item>less than or eq 5 </item>
     </string-array>
-    
-    
+
+
     <string-array name="Pa02_Array">
         <item>Select Here</item>
         <item>>=500</item>
@@ -168,22 +168,20 @@
     </string-array>
 
 
+    <string-array name="Sodium_Array">
 
-    
-<string-array name="Sodium_Array">
+        <item>Select Here</item>
+        <item>>=180</item>
+        <item>160-179 </item>
+        <item> 155-159</item>
+        <item>150-154</item>
+        <item>130-149</item>
 
-    <item>Select Here</item>
-    <item>>=180</item>
-    <item>160-179 </item>
-    <item> 155-159</item>
-    <item>150-154</item>
-    <item>130-149</item>
+        <item>120-129</item>
+        <item>less than or eq 120 </item>
 
-    <item>120-129</item>
-    <item>less than or eq 120 </item>
+    </string-array>
 
-</string-array>
-    
     <string-array name="Potassium_Array">
 
 
@@ -196,31 +194,31 @@
 
         <item>2.5-2.9</item>
         <item>less than or eq 2.5 </item>
-        
+
 
     </string-array>
-<string-array name="Creatinine_Array">
-    <item>Select Here</item>
-    <item>>=3.5</item>
-    <item>2-3.4 </item>
-    <item> 1.5-1.9</item>
-    <item>150-154</item>
-    <item>0.6-1.4</item>
+    <string-array name="Creatinine_Array">
+        <item>Select Here</item>
+        <item>>=3.5</item>
+        <item>2-3.4 </item>
+        <item> 1.5-1.9</item>
+        <item>150-154</item>
+        <item>0.6-1.4</item>
 
 
-    <item>less than or eq 0.6 </item>
-</string-array>
+        <item>less than or eq 0.6 </item>
+    </string-array>
 
 
-<string-array name="Hematocrit_Array">
-    <item>Select Here</item>
-    <item>>=60</item>
-    <item>50-59.9 </item>
-    <item> 46-49.9</item>
-    <item>30-45.9</item>
-    <item>20-29.9</item>
-    <item>less than or eq 20 </item>
-</string-array>
+    <string-array name="Hematocrit_Array">
+        <item>Select Here</item>
+        <item>>=60</item>
+        <item>50-59.9 </item>
+        <item> 46-49.9</item>
+        <item>30-45.9</item>
+        <item>20-29.9</item>
+        <item>less than or eq 20 </item>
+    </string-array>
 
 
     <string-array name="Wbc_Array">
@@ -266,8 +264,6 @@
     <string name="apache_8">88% non-operation 83% Post Operation</string>
 
 
-
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_saved_data">SavedData</string>
@@ -275,13 +271,13 @@
 
 
     <string-array name="Saps_Age">
-    <item>Select Here</item>
-    <item> less than 40 </item>
+        <item>Select Here</item>
+        <item> less than 40 </item>
         <item> 40-59 </item>
-    <item>60-69 </item>
-    <item>70-74</item>
-    <item>75-79</item>
-    <item>greater than 80 </item>
+        <item>60-69 </item>
+        <item>70-74</item>
+        <item>75-79</item>
+        <item>greater than 80 </item>
 
     </string-array>
     <string-array name="Saps_Heart">
@@ -296,14 +292,13 @@
 
 
     <string-array name="Saps_Bp">
-    <item>Select Here</item>
-    <item> less than 70</item>
-    <item>70-69 </item>
-    <item>100-199</item>
-    <item>75-79</item>
-    <item>greater than 200 </item>
+        <item>Select Here</item>
+        <item> less than 70</item>
+        <item>70-69 </item>
+        <item>100-199</item>
+        <item>75-79</item>
+        <item>greater than 200 </item>
     </string-array>
-
 
 
     <string-array name="Saps_Urine">
@@ -313,7 +308,6 @@
         <item>100-199</item>
         <item>greater than 1000 </item>
     </string-array>
-
 
 
     <string-array name="Saps_Sodium">
@@ -331,7 +325,6 @@
 
         <item>greater than 5.0 </item>
     </string-array>
-
 
 
     <string-array name="Saps_Temp">
@@ -357,7 +350,6 @@
 
         <item>greater than 200 </item>
     </string-array>
-
 
 
     <string-array name="Saps_BUN">
@@ -412,5 +404,4 @@
     <string name="text_Bicarbonate">Bicarbonate</string>
 
 
-    
 </resources>

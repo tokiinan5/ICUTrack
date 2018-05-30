@@ -1,5 +1,6 @@
 package com.example.dell.icutrack;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,40 +26,39 @@ public class SavedData extends AppCompatActivity {
    // ArrayList myList;
     ListView listView;
     ArrayList<IRPSdataFormat> myList;
+    Button apche, saps, iprs;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_saved_data);
-        listView=findViewById(R.id.lSaved);
-        FirebaseAuth auth;
-      //  DatabaseReference mDatabase;
-        auth=FirebaseAuth.getInstance();
-        final FirebaseUser user=auth.getCurrentUser();
-        final DatabaseReference mReference=FirebaseDatabase.getInstance().getReference();
-      //  Toast.makeText(this, user.getUid().toString(), Toast.LENGTH_SHORT).show();
-        mReference.getRoot().child("IRPS").child(String.valueOf(user.getUid())).addListenerForSingleValueEvent(new ValueEventListener() {
+        apche = findViewById(R.id.bSeverity);
+        saps = findViewById(R.id.bSaps);
+        iprs = findViewById(R.id.breadmission);
+
+        apche.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                IRPSdataFormat format=dataSnapshot.getValue(IRPSdataFormat.class);
-               // String data=format.getAge();
-                //Toast.makeText(getApplicationContext(),data,Toast.LENGTH_LONG).show();
-
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-                //
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),ApacheData.class);
+                startActivity(intent);
 
             }
         });
-     //   Toast.makeText(this,String .valueOf(myList.size()), Toast.LENGTH_SHORT).show();
-        ArrayAdapter myAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,myList);
-//        listView.setAdapter(myAdapter);
 
+        saps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
+        });
+        iprs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        //  Toast.makeText(this, user.getUid().toString(), Toast.LENGTH_SHORT).show();
     }
 }

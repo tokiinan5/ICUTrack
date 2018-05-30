@@ -12,6 +12,16 @@ public class ApacheFeatures {
     private int Creatinine;
     private int Age;
 
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    private String result;
+
     public int getTemperature() {
         return Temperature;
     }
@@ -135,5 +145,5 @@ public class ApacheFeatures {
     private int Hematocrit;
     private int WBc;
     private int Coma;
-   private String CriticalDesease,date;
+   private String CriticalDesease, date;
 }
